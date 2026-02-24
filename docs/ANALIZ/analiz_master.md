@@ -89,19 +89,19 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
 ## 📝 Round 5 Soruları (Yönetim, Öğrenci Verisi ve Görsel Planlama)
 
 - [ ] **Soru 22 (Öğrenci Veri Yükleme):** Öğrencilerin sistem üzerinde tanınması için (No ve Şifre eşleşmesi) verileri Admin paneline nasıl gireceğiz? (Örn: Bir Excel listesini Admin paneline yükleyerek mi, yoksa her öğrenciyi tek tek mi ekleyeceğiz?)
-  <!-- YANIT:  -->
+  <!-- YANIT: öğrencilerin verilerinin excel tablosu mevcut.  -->
 
 - [ ] **Soru 23 (Başarı Listesi Detayı):** Yıllara göre başarıları girerken; öğrencilerin sadece bölümü mü (Örn: Tıp Fakültesi) yoksa kazandıkları üniversite adı da (Örn: Hacettepe Üniversitesi Tıp Fakültesi) yazılacak mı?
-  <!-- YANIT:  -->
+  <!-- YANIT: O bilgiler panelden yazılacak her sene ayrı ayrı. -->
 
 - [ ] **Soru 24 (Drive Yetkilendirme):** Google Drive klasörü kurumun kendi mail adresi üzerinde mi? Web sitesinin bu klasöre "okuma" yetkisiyle erişebilmesi için bir Google Cloud Service Account kurmamız gerekecek. Bu teknik kurulumu (eğitmen moduyla) birlikte yapabilir miyiz?
-  <!-- YANIT:  -->
+  <!-- YANIT: kendi adresinde değil. -->
 
 - [ ] **Soru 25 (Görsel İçerik - Fotoğraflar):** "Kütüphane, etüt odaları" gibi özelliklerden bahsetmiştik. Bu alanların gerçek fotoğrafları mevcut mu? Tasarımı yaparken buralara yer tutucu (placeholder) yerine gerçek fotoğraflar koymak sitenin "premium" hissini çok artıracaktır.
-  <!-- YANIT:  -->
+  <!-- YANIT:Fotoğraflar anlşık olarak mevcut değil, şu anlık ai ile üreteleim sonrasında gerçek fotoları ekleriz.  -->
 
 - [ ] **Soru 26 (Duyuru Arşivi):** Eski duyurular silinsin mi yoksa bir "Arşiv" sayfasında saklansın mı? (Örn: Geçen yılın cevap anahtarları hala erişilebilir olmalı mı?)
-  <!-- YANIT:  -->
+  <!-- YANIT: gerek yok arşivde tutmaya, sadece güncel duyurular olsun. -->
 
 ---
 > [!NOTE]
