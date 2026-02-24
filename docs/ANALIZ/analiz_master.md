@@ -86,22 +86,41 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
 ---
 **İlerleme:** Round 5/10, Tamamlanma: 21/26 (%80)
 
-## 📝 Round 5 Soruları (Yönetim, Öğrenci Verisi ve Görsel Planlama)
+- [x] **Soru 22 (Öğrenci Veri Yükleme):** Öğrencilerin sistem üzerinde tanınması için verileri Admin paneline nasıl gireceğiz?
+  → **YANIT:** Öğrencilerin verilerinin Excel tablosu mevcut.
 
-- [ ] **Soru 22 (Öğrenci Veri Yükleme):** Öğrencilerin sistem üzerinde tanınması için (No ve Şifre eşleşmesi) verileri Admin paneline nasıl gireceğiz? (Örn: Bir Excel listesini Admin paneline yükleyerek mi, yoksa her öğrenciyi tek tek mi ekleyeceğiz?)
-  <!-- YANIT: öğrencilerin verilerinin excel tablosu mevcut.  -->
+- [x] **Soru 23 (Başarı Listesi Detayı):** Yıllara göre başarılar panelden mi girilecek?
+  → **YANIT:** O bilgiler panelden yazılacak her sene ayrı ayrı. Üniversite ve bölüm detaylı olacak.
 
-- [ ] **Soru 23 (Başarı Listesi Detayı):** Yıllara göre başarıları girerken; öğrencilerin sadece bölümü mü (Örn: Tıp Fakültesi) yoksa kazandıkları üniversite adı da (Örn: Hacettepe Üniversitesi Tıp Fakültesi) yazılacak mı?
-  <!-- YANIT: O bilgiler panelden yazılacak her sene ayrı ayrı. -->
+- [x] **Soru 24 (Drive Yetkilendirme):** Drive klasörü kurumun kendi mailinde mi?
+  → **YANIT:** Kendi adresinde değil. (Harici bir adresten paylaşım veya yetkilendirme yapılacak.)
 
-- [ ] **Soru 24 (Drive Yetkilendirme):** Google Drive klasörü kurumun kendi mail adresi üzerinde mi? Web sitesinin bu klasöre "okuma" yetkisiyle erişebilmesi için bir Google Cloud Service Account kurmamız gerekecek. Bu teknik kurulumu (eğitmen moduyla) birlikte yapabilir miyiz?
-  <!-- YANIT: kendi adresinde değil. -->
+- [x] **Soru 25 (Görsel İçerik):** Görseller AI ile mi üretilsin?
+  → **YANIT:** Fotoğraflar anlık olarak mevcut değil, şu anlık AI ile üretelim sonrasında gerçek fotoları ekleriz.
 
-- [ ] **Soru 25 (Görsel İçerik - Fotoğraflar):** "Kütüphane, etüt odaları" gibi özelliklerden bahsetmiştik. Bu alanların gerçek fotoğrafları mevcut mu? Tasarımı yaparken buralara yer tutucu (placeholder) yerine gerçek fotoğraflar koymak sitenin "premium" hissini çok artıracaktır.
-  <!-- YANIT:Fotoğraflar anlşık olarak mevcut değil, şu anlık ai ile üreteleim sonrasında gerçek fotoları ekleriz.  -->
+- [x] **Soru 26 (Duyuru Arşivi):** Eski duyurular saklansın mı?
+  → **YANIT:** Gerek yok arşivde tutmaya, sadece güncel duyurular olsun.
 
-- [ ] **Soru 26 (Duyuru Arşivi):** Eski duyurular silinsin mi yoksa bir "Arşiv" sayfasında saklansın mı? (Örn: Geçen yılın cevap anahtarları hala erişilebilir olmalı mı?)
-  <!-- YANIT: gerek yok arşivde tutmaya, sadece güncel duyurular olsun. -->
+---
+**İlerleme:** Round 6/10, Tamamlanma: 26/31 (%83)
+
+## 📝 Round 6 Soruları (Format, Erişim ve Stil Detayları)
+
+- [ ] **Soru 27 (Excel Yapısı):** Elinizdeki Excel tablosunda sütun başlıkları nelerdir? (Örn: Ad, Soyad, Öğrenci No, Şifre vb.) İçe aktarma (import) motorunu bu başlıkları otomatik tanıyacak şekilde kodlayabilirim.
+  <!-- YANIT: Bu excel tablosuna kuruma sorduktan sonra erişilecek. -->
+
+- [ ] **Soru 28 (Drive Erişimi):** Drive klasörü harici bir adresteyse; sistemin bu dosyalara erişebilmesi için ya klasörün "Bağlantıya sahip olan herkes görüntüleyebilir" şeklinde açık olması ya da bizim sistemimize (Service Account) bir "Görüntüleyici" yetkisi verilmesi gerekir. Hangisi sizin için daha uygun?
+  <!-- YANIT: Biz klaösrü görüntülemeyecez, sisteme giriş yapan kişi kendi arensini sistemde görebilecek ve indirebilecek. -->
+
+- [ ] **Soru 29 (AI Görsel Tarzı):** Sitede kullanacağımız AI fotoğraflarının "vibe"ı/havası nasıl olsun? (Örn: Çok modern, teknolojik, cam duvarlı ferah sınıflar mı; yoksa daha sıcak, klasik dershane atmosferi mi?)
+  <!-- YANIT: aşırı modern değil daha çok normal bir sınıf olsun içinde akıllı tahta bulunsun. -->
+
+- [ ] **Soru 30 (Sosyal Medya):** Sitede footer veya iletişim kısmında yer alacak sosyal medya (Instagram, Twitter, Facebook vb.) linkleriniz mevcut mu?
+  <!-- YANIT:İnstagram faceboook ve whatsapp linkleri eklenecek. Adres de yer alacak iletişim bilgileri de yer alsın.
+   -->
+
+- [ ] **Soru 31 (Hakkımızda Metni):** "Hakkımızda" sayfası için hazır bir kurumsal metniniz var mı, yoksa anahtar kelimeleri verirseniz ben mi bir taslak oluşturayım?
+  <!-- YANIT: 6 Sigma eğitim kurumları Hep bir adım önde . !0 senedir türkiye birincisi ve sıralamaları çıkarıyoruz . 10 yılda 463 tıp öğrencisi çıkardık. Bu verileri kullanarak dershaneyi anlatan bir metin oluştur.  -->
 
 ---
 > [!NOTE]
