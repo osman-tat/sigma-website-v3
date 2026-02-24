@@ -33,13 +33,13 @@
 ### 2.1. Mimari Prensipler
 
 ```
-┌──────────────┐    REST API    ┌──────────────────┐    SQL    ┌──────────────┐
+┌──────────────┐    REST API    ┌──────────────────┐    SQL   ┌──────────────┐
 │   Next.js    │ ────────────── │  .NET 8 Backend  │ ──────── │   Supabase   │
 │  (Frontend)  │                │  (Web API)       │          │  (PostgreSQL │
 │              │                │                  │ ──────── │  + Storage)  │
 └──────────────┘                │  ┌─────────────┐ │          └──────────────┘
-                                │  │ Harici API   │ │
-                                │  │ (Karne Srv.) │ │
+                                │  │ Harici API  │ │
+                                │  │ (Karne Srv.)│ │
                                 │  └─────────────┘ │
                                 └──────────────────┘
 ```
@@ -294,7 +294,7 @@ sayfa_icerikleri (
 
 ### 7.3. SEO
 
-- **Hedef anahtar kelime:** "Elazığ dershane" → 1. sırada çıkması gerekiyor
+- **Hedef anahtar kelime:** "Elazığ Dershane" → 1. sırada çıkması gerekiyor
 - **Alan adı:** ⏳ Henüz belirlenmedi
 - Semantic HTML, meta tags, proper heading hierarchy
 

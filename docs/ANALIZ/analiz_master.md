@@ -14,7 +14,7 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
   → **YANIT:** Bazı denemelerde karne veriliyor hem onu indirebilecek hem de bazı denemelere özgü yapay zeka analizli deneme karneleri olacak. Bunları indirebilecek.
 
 - [x] **Soru 3:** Duyurular kısmında sadece metin mi olacak, yoksa PDF/Görsel paylaşımı (Örn: Haftalık ders programı) yapılacak mı?
-  → **YANIT:** Genel olarak metin olacak ama haftada bir deneme sınav cevap anahtarı paylaşımı yapılıyor duyurular kısmından admin paneli ile bu deneme cevap anahtarları deneme sınavında sonra öğrencilerle paylaşılacak.
+  → **YANIT:** Genel olarak metin olacak ama haftada bir deneme sınav cevap anahtarı paylaşımı yapılıyor duyurular kısmından admin paneli ile bu deneme cevap anahtarları deneme sınavında sonra öğrencilerle paylaşılacak. 
 
 - [x] **Soru 4:** Web sitesinde "Online Kayıt" veya "İletişim Formu" gibi aktif bir veri toplama mekanizması istiyor musunuz?
   → **YANIT:** Online olarak kayıt alamayacağız ancak müşteriyi veliyi yüz yüze kayıda ve görüşmeye yönlendirecek.
@@ -28,10 +28,10 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
 ## 📝 Round 2 Soruları (Derinleşme)
 
 - [x] **Soru 6 (Öğrenci Girişi):** Öğrenciler panele nasıl giriş yapacak? (Örn: TC Kimlik No + Telefon, veya önceden tanımlanmış bir şifre?)
-  → **YANIT:** Panel daha çok websitesini yönetenlere yönelik olacak. Öğrencilerin ise deneme sonuçlarını yüklemesi ve indirmesi için öğrenci numarası ve şifre ile giriş yapması gerekecek. Ve bu giriş sadece deneme sınav sonucu gör dediğinde gelecek. Normal websitesi ziyaretinde en başta kullanıcı adı şifre istenmeyecek.
+  → **YANIT:** Panel daha çok websitesini yönetenlere yönelik olacak. Öğrencilerin ise deneme sonuçlarını yüklemesi ve indirmesi için TC ve dogum tarıhı ile giriş yapması gerekecek. Sadece yapay zeka desteklı sonuz apısınden gelen PDF i gorucek. Bunun dısında baska hıcbır seye erısemıcek.API den tum yapay zeka desteklı karneler donucek, bu karnelerın hepsı gorunucek.API de uc farklı endpoint olucak, tum heosını donen ve sade son karneyı donen ve tum karnelerı donen endpointler olucak.  
 
 - [x] **Soru 7 (AI Analiz):** "Yapay zeka analizli karneler" hazır PDF olarak mı sisteme yüklenecek, yoksa ham veriler yüklenecek ve site içinde mi oluşturulacak?
-  → **YANIT:** Bu yapay zeka ile hazırlanmış karneler farklı bir programda hazırlanıp bir drive klasöründe saklanacak. Biz de bir istek atarak bu drive klasöründen ilgili öğrencinin karnesini çekip indirmelerini sağlayacağız.
+  → **YANIT:** yapay zeka destekli karne rapor uygulaması havsan.cloud domain inden bir api istegi ile çekilecek. Gelen yanıt govdesınde ogrencı bılgılerı sınav bilgisi ve PDF base 64 olarak servisten yanıt gelicek.
 
 - [x] **Soru 8 (Admin Paneli):** Duyuru ve cevap anahtarı yüklemek için bir Admin Paneli ihtiyacımız net. Bu paneli kimler kullanacak? (Sadece kurum sahibi mi, yoksa sekreterlik/rehberlik birimi de olacak mı?)
   → **YANIT:** Kurum sahibine ek olarak bu panele rehberlik birimi de erişebilecek.
@@ -107,7 +107,7 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
 ## 📝 Round 6 Soruları (Format, Erişim ve Stil Detayları)
 
 - [ ] **Soru 27 (Excel Yapısı):** Elinizdeki Excel tablosunda sütun başlıkları nelerdir? (Örn: Ad, Soyad, Öğrenci No, Şifre vb.) İçe aktarma (import) motorunu bu başlıkları otomatik tanıyacak şekilde kodlayabilirim.
-  → **YANIT:** ⏳ Kuruma sorulduktan sonra Excel tablosuna erişilecek. (Beklemede)
+  → **YANIT:** ⏳ Kuruma sorulduktan sonra Excel tablosuna erişilecek. (Beklemede).
 
 - [x] **Soru 28 (Drive Erişimi):** Drive klasörü harici bir adresteyse; sistemin bu dosyalara erişebilmesi için ya klasörün "Bağlantıya sahip olan herkes görüntüleyebilir" şeklinde açık olması ya da bizim sistemimize (Service Account) bir "Görüntüleyici" yetkisi verilmesi gerekir. Hangisi sizin için daha uygun?
   → **YANIT:** Klasör doğrudan görüntülenmeyecek. Sisteme giriş yapan öğrenci, kendi karnesini sistemde görebilecek ve indirebilecek. (Yani karneler sisteme yüklenecek, Drive'dan anlık çekim yapılmayacak.)
@@ -227,25 +227,25 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
 > Son round tamamlandı! Teknik mimari kararları netleştirildi.
 
 - [x] **Soru 58 (.NET Backend Versiyon):** .NET backend için hangi versiyon tercih ediliyor? (Örn: .NET 8, .NET 9) Ve framework olarak ASP.NET Core Web API mi kullanılacak?
-  → **YANIT:** Versiyonu biz belirleyeceğiz. (Karar: .NET 8 LTS + ASP.NET Core Web API)
+  → **YANIT:** Karar: .NET 8 LTS + ASP.NET Core Web API
 
 - [x] **Soru 59 (.NET Backend Kapsamı):** .NET backend'in asıl görevi ne olacak? Aşağıdaki seçeneklerden hangisi/hangileri geçerli?
-  → **YANIT:** A + B + C hepsi geçerli. Frontend kodunda hiçbir bilgi hardcode olmayacak. Tüm bilgiler (çalışma saatleri, linkler, adres dahil) DB'den çekilip backend üzerinden frontend'e gönderilecek. Backend aynı zamanda harici API'lere istek atabilecek, ileride başka API'lere de entegre olabilir.
+  → **YANIT:** Asıl gorevi frontend ten gelen istekleri karsılamak , is sureclerine bakarak veri tababından verileri cekmek ve frontend e servis ve endpoint saglamaktır. swegger open apı ile servisler fronterne sunulacak guvenlık mekanızması olarak JWT token kullanılacak. moduler monolit mımarı ıle gelistrilicek, middle ware kullanılıcak. backend servisleride kendı içinde haberlesirken bu apı keyı kullanmaları sarttır. endpointlerin donus tıpı standart bir result nesnesı olusturulacak, Tum apiler bu sekılde yanıt donucek. Repository design pattern kullanılacak. Entire pattern kullanılacak. n-Tier mimari kullanılacak. Db first yaklasımı ıle yazılacak. Veri tabanından entitileri EF core POWER tools ile tablo ları okuyarak entityleri otomatik olusturacak. IDE olarak VS 2022 kullanılıcak.
 
 - [x] **Soru 60 (Frontend-Backend İletişimi):** Next.js frontend, Supabase'e doğrudan mı bağlanacak (client-side SDK), yoksa tüm veri trafiği .NET backend üzerinden mi geçecek?
-  → **YANIT:** Tüm veri trafiği .NET backend üzerinden geçecek. (Frontend → .NET API → Supabase)
+  → **YANIT:** Tüm veri trafiği .NET backend üzerinden geçecek. (Frontend → .NET API → Supabase) . Frontendin dogrudan database erismesi kesınlıkle yasaktır, bu islem IP kısıtlamasıyala engellenecek. sadece backendin database erismesi olacak.
 
 - [x] **Soru 61 (Admin Paneli Yetkilendirme):** Admin paneline giriş için Supabase Auth (e-posta + şifre) mi kullanılacak, yoksa .NET backend'de kendi auth mekanizmanızı mı kurmak istiyorsunuz?
-  → **YANIT:** .NET'in kendi auth mekanizması kurulup kullanılacak. (ASP.NET Identity veya JWT tabanlı custom auth.)
+  → **YANIT:** frontend ten kullanıcı gırısı endpointine kullanıcı adı ve sifre ile erislmek istendıgınde, istek backende duser, ligin endpointi  veri tabanında boyle bir kullanıcı varmı dıye sorgular, boyle bir kullanıcı varsa giris saglanir. bu istekler JWT token ile saglanir. 
 
 - [x] **Soru 62 (Supabase Tabloları):** Veritabanında şu tablolar olacak gibi görünüyor: `duyurular`, `basarilar`, `site_ayarlari` (çalışma saatleri, iletişim bilgileri vb.), `admin_kullanicilar`. Eksik veya fazla gördüğünüz tablo var mı?
-  → **YANIT:** Tabloları biz belirleyeceğiz. Ne kadar gerekiyorsa o kadar tablo oluşturulacak.
+  → **YANIT:** Tabloları biz frontend bittikten sonra belirleyeceğiz. frontend te ki veri iceren kısımlar dummy veri ile doldurulacak. Frontend tasarımıda veri gelen kısımlar belirlenip entitlerimiz olusturulacak bu entityleri 2. asama olarak tablolara donustrecegız. tabloların ıcınıde dummy dataları ıle dolduracagız 3. asama olarak endpoinlerimiz bu dummy datalarını frontende servis edicek. 4. asama olarak dummy dataları gercek verıler ıle degıstırecegız. 
 
 - [x] **Soru 63 (Docker Kullanımı):** Geliştirme ortamında Docker kullanılacak mı? (HAVSAN standardı gereği Docker-first yaklaşım önerilir.) .NET backend ve Next.js frontend için ayrı container'lar mı olacak?
-  → **YANIT:** En mantıklı olan seçilecek. (Karar: HAVSAN standardı gereği Docker-first yaklaşım uygulanacak.)
+  → **YANIT:** HAVSAN standardı gereği Docker-first yaklaşım uygulanacak. frontend ayrı bir proje , backend ayrı bir proje olucak ve ayrı ayrı docker container olucak ve yayına alınıcak.
 
 - [x] **Soru 64 (Deployment Platformu):** Site hangi platformda yayınlanacak?
-  → **YANIT:** Henüz belli değil. (İleriye bırakıldı.)
+  → **YANIT:** Domain bilgisi: 6sigmadershaneleri.com, hostinger shared hosting. hosting bilgileri havsan sunucularında tutulacak. Repo private git e atılıcak. Main branchına commit atılıdıgında oto deploy sureci tetıklenecek. Bu kısmımda yazılımcılar olarak projeyı gite atmak. sonrasında devops ekıpı uygulamayı yayına alacak.
 
 - [x] **Soru 65 (Deneme Sonucu Sayfası Akışı):** Öğrenci "Deneme Sonuçlarım" butonuna tıklayınca akış şu şekilde mi olacak? 1) Öğrenci numarasını girer → 2) Backend harici API'ye istek atar → 3) PDF döner → 4) Önizleme + İndir butonu gösterilir. Bu akış doğru mu?
   → **YANIT:** Evet, tam olarak bu akış olacak. Ancak ileride küçük değişiklikler olabilir; sadece öğrenci numarası değil, başka bilgiler de gerekebilir.
