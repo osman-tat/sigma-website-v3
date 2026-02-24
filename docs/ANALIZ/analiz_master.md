@@ -11,13 +11,13 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
   → **YANIT:** Dershane logosu mevcut ve baskın renkler beyaz lacivert ve kırmızı.
 
 - [x] **Soru 2:** "Deneme sonuçları ve analizleri" denilince tam olarak neyi kastediyoruz? Öğrenci sadece puanını mı görecek, yoksa Türkiye geneli sıralama, konu analizi gibi detaylı grafikler olacak mı?
-  → **YANIT:** Bazı denemelerde karne veriliyor hem onu indirebilecek hem de bazı denemelere özgü yapay zeka analizli deneme karneleri olacak. Bunları indirebilecek.
+  → **YANIT:** Bazı denemelerde karne veriliyor hem onu pdf olarak indirebilecek hem de bazı denemelere özgü yapay zeka analizli deneme karneleri olacak.
 
 - [x] **Soru 3:** Duyurular kısmında sadece metin mi olacak, yoksa PDF/Görsel paylaşımı (Örn: Haftalık ders programı) yapılacak mı?
-  → **YANIT:** Genel olarak metin olacak ama haftada bir deneme sınav cevap anahtarı paylaşımı yapılıyor duyurular kısmından admin paneli ile bu deneme cevap anahtarları deneme sınavında sonra öğrencilerle paylaşılacak. 
+  → **YANIT:** Genel olarak metin olacak ama haftada bir deneme sınav cevap anahtarı paylaşımı yapılıyor pdf ve görsel de paylaşılacak. duyurular kısmından admin paneli ile bu deneme cevap anahtarları, deneme sınavından sonra öğrencilerle paylaşılacak. 
 
 - [x] **Soru 4:** Web sitesinde "Online Kayıt" veya "İletişim Formu" gibi aktif bir veri toplama mekanizması istiyor musunuz?
-  → **YANIT:** Online olarak kayıt alamayacağız ancak müşteriyi veliyi yüz yüze kayıda ve görüşmeye yönlendirecek. 
+  → **YANIT:** Online olarak kayıt alamayacağız ancak müşteriyi veliyi yüz yüze kayıda ve görüşmeye yönlendirecek. İletişim bilgileri websitesinde yer alacak.
 
 - [x] **Soru 5:** Sitenin dili sadece Türkçe mi olacak, yoksa İngilizce vb. başka diller de düşünülüyor mu?
   → **YANIT:** Tamamen Türkçe olacak.
@@ -28,7 +28,7 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
 ## 📝 Round 2 Soruları (Derinleşme)
 
 - [x] **Soru 6 (Öğrenci Girişi):** Öğrenciler panele nasıl giriş yapacak? (Örn: TC Kimlik No + Telefon, veya önceden tanımlanmış bir şifre?)
-  → **YANIT:** Panel daha çok websitesini yönetenlere yönelik olacak. Öğrencilerin ise deneme sonuçlarını yüklemesi ve indirmesi için TC ve dogum tarıhı ile giriş yapması gerekecek. Sadece yapay zeka desteklı sonuz apısınden gelen PDF i gorucek. Bunun dısında baska hıcbır seye erısemıcek.API den tum yapay zeka desteklı karneler donucek, bu karnelerın hepsı gorunucek.API de uc farklı endpoint olucak, tum heosını donen ve sade son karneyı donen ve tum karnelerı donen endpointler olucak.  
+  → **YANIT:** Panel daha çok websitesini yönetenlere yönelik olacak. Öğrencilerin ise deneme sonuçlarını indirmesi giriş yapmayacak, bir giriş sayfası bulunmayacak, sadece deneme sonuçlarını indirmek için tc numarasını ve doğum tarihini girecek. Sadece yapay zeka desteklı sonuz apısınden gelen PDF i gorucek. Bunun dısında baska hıcbır seye erısemıcek.API den tum yapay zeka desteklı karneler donucek, bu karnelerın hepsı gorunucek.API de uc farklı endpoint olucak, tum hepsını donen ve sade son karneyı donen ve tum karnelerı donen endpointler olucak. Eğer sistemde böyle bir karne yoksa bir hata mesajı dönecek.
 
 - [x] **Soru 7 (AI Analiz):** "Yapay zeka analizli karneler" hazır PDF olarak mı sisteme yüklenecek, yoksa ham veriler yüklenecek ve site içinde mi oluşturulacak?
   → **YANIT:** yapay zeka destekli karne rapor uygulaması havsan.cloud domain inden bir api istegi ile çekilecek. Gelen yanıt govdesınde ogrencı bılgılerı sınav bilgisi ve PDF base 64 olarak servisten yanıt gelicek.
@@ -48,37 +48,37 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
 ## 📝 Round 3 Soruları (Teknik ve İçerik Detayları)
 
 - [x] **Soru 11 (Drive Entegrasyonu):** Google Drive üzerindeki karnelerle öğrencileri nasıl eşleştireceğiz? (Örn: Dosya isimleri öğrenci numarası mı olacak? `12345.pdf` gibi?)
-  → **YANIT:** Öğrenci ismi ve soy ismi ile eşleştirme yapılacak.
+  → **YANIT:** oluşturulan programdaki bir apiye istek atılıp, öğrenci tc kimlik ve doğum tarihi ile sorgulama yapılacak ve istek atılacak.
 
 - [x] **Soru 12 (YKS & LGS Ayrımı):** Tek şube olmasına rağmen YKS ve LGS kursları için ana sayfada ayrı bölümler/butonlar istiyor musunuz? (Girişte "LGS için tıkla" / "YKS için tıkla" gibi bir karşılama mı istersiniz?)
   → **YANIT:** Şüphesiz olmalı. YKS ve LGS için iki ayrı üst kısımda buton olmalı ve ayrı sayfalar açılıp detay verilmeli. Hakkımızda, Başarılarımız, Duyurular (içinde deneme sonuçları bulunmalı), YKS, LGS butonları/sayfaları olmalı ve de anasayfa olmalı.
 
 - [x] **Soru 13 (Başarılar Görselliği):** Başarılar kısmında öğrencilerin fotoğrafları olacak mı yoksa sadece isim ve yerleştikleri okul bilgisi mi yeterli?
-  → **YANIT:** Fotoğraf olmayacak yalnızca öğrenci ismi ve başarısı yer alacak. Her sene kaç tıp kazanıldığı gibi detaylı bilgiler de mevcut.
+  → **YANIT:** Fotoğraf olmayacak yalnızca öğrenci ismi ve başarısı yer alacak. Her sene kaç tıp kazanıldığı gibi detaylı bilgiler de mevcut. LGS ve YKS için ayrı ayrı başarılar listelenecek. LGS için her sene öğrencilerin girdiği yüzdelik dilimler de yer alacak. Kaç öğrenci fen kaç öğrenci anadolu lisesi kanazdı şeklinde yer alacak her sene için admin panelinden güncellenecek bu veriler.
 
 - [x] **Soru 14 (İletişim ve Formlar):** İletişim sayfasından veya "Kayıt için bilgi al" butonundan gelen mesajların nereye gitmesini istersiniz? (WhatsApp, E-posta veya direkt Admin Paneli?)
   → **YANIT:** WhatsApp ve telefonla aramaya yönlendirsin.
 
 - [x] **Soru 15 (Hosting & Deployment):** Projeyi HAVSAN standartlarında (Coolify üzerinden havsan.cloud altyapısına) mı kuracağız? (Eğer özel bir tercihiniz yoksa standart prosedürle ilerleyeceğim.)
-  → **YANIT:** Hayır, farklı bir hosting ile yayına alınacak.
+  → **YANIT:** Evet havsan cloud altyapısına kurulacak.
 
 ---
 **İlerleme:** Round 4/10, Tamamlanma: 15/20 (%75)
 
 - [x] **Soru 16 (Duyuru Detayları):** Duyurular sadece metin olabiliyordu. Peki bu duyurulara "Kategori" (Örn: Sınav Takvimi, Genel Duyuru, Tatil Bilgisi) eklemeli miyiz? Ayrıca her duyuru için bir "Bitiş Tarihi" (Süresi dolunca otomatik kalksın mı?) istiyor musunuz?
-  → **YANIT:** Evet her duyuru için bir kategori belirlenebilir. Deneme cevap anahtarı, deneme sınav sonucu görüntüleme (bu kısımda öğrenci girişi olmalı), genel duyurular, tatil bilgisi gibi kategoriler olacak.
+  → **YANIT:** Evet her duyuru için bir kategori belirlenebilir. Deneme cevap anahtarı, deneme sınav sonucu görüntüleme (Tc ve doğum tarihi alınacak.), karne analizi yükleme, genel duyurular, tatil bilgisi gibi kategoriler olacak.
 
 - [x] **Soru 17 (Cevap Anahtarı Yönetimi):** Admin paneline cevap anahtarı yüklerken; sadece bir PDF mi yüklenecek, yoksa cevaplar dijital olarak (A-B-C-D gibi) sisteme girilecek mi? (Hızlı kontrol ekranı gibi bir şey isterseniz teknik detay değişir.)
-  → **YANIT:** Cevap anahtarının PDF olarak yüklenmesi sağlanacak.
+  → **YANIT:** Cevap anahtarının PDF olarak yüklenmesi sağlanacak. Bazı denemelerde birden fazla pdf yüklenebilir bir deneme cevap anahtarı için.
 
 - [x] **Soru 18 (Başarılar Modülü):** "Her sene kaç tıp kazanıldığı" bilgisini grafiksel olarak (bar chart, pie chart vb.) göstermek ister misiniz? Verileri girerken "Öğrenci Adı - Kazandığı Yer" formatında mı gireceğiz yoksa sadece "Tıp: 15 Kişi" gibi sayısal bir özet mi olacak?
-  → **YANIT:** Yıllara göre bir grafik yapacağız (son 8 senede kaç tıp kazanıldı şeklinde). Ayrı olarak her sene o senenin öğrencileri neler kazandı, onlar da ek olarak girilecek.
+  → **YANIT:** Yıllara göre bir grafik yapacağız (son 8 senede kaç tıp kazanıldı şeklinde). Ayrı olarak her sene o senenin öğrencileri neler kazandı, onlar da ek olarak girilecek. Yan yana sutünlar halinde her sene için kazanılan tıp fakültesi sayıları yer alsın.
 
 - [x] **Soru 19 (Google Drive Teknik):** Drive klasöründen "İsim Soyisim" ile eşleştirme yaparken; eğer dosyada "Ali Yilmaz" yazıyor ama sistemdeki öğrenci "Ali Yılmaz" (Türkçe karakter farkı) ise sistem hata verir. Bu tür durumlar için teknik bir "Normalization" (Karakter temizleme) süreci planlamamı ister misiniz?
-  → **YANIT:** Bunu sonra tekrar konuşalım.
+  → **YANIT:** Drive klasöründen çekilmeyecek soru 6 ve 7 de yeniden cevaplandı detaylı sekilde.
 
 - [x] **Soru 20 (YKS/LGS İçerikleri):** Açılacak olan YKS ve LGS özel sayfalarında; sadece ders programı mı olacak, yoksa "Neden bizimle hazırlanmalısınız?" gibi uzun tanıtım yazıları ve fotoğraflar mı paylaşacağız? (İçerik yoğunluğunu anlamak için soruyorum.)
-  → **YANIT:** Neden bizi tercih etmelisiniz diye bir bölüm olacak. Altında; kütüphane, etüt odaları, özel ders imkanı, soru çözüm saatleri, "açık büfe" ders imkanı, kaliteli yayınlar, sık deneme sınavları, rehberlik imkanı gibi hususlar yer alacak.
+  → **YANIT:** Yalnızca ders programı değil, Neden bizi tercih etmelisiniz diye bir bölüm olacak. Altında; kütüphane, etüt odaları, özel ders imkanı, soru çözüm saatleri, "açık büfe" ders imkanı, kaliteli yayınlar, sık deneme sınavları, rehberlik imkanı gibi hususlar yer alacak.
 
 - [x] **Soru 21 (Hosting Kısıtı):** DB Supabase olacak mı?
   → **YANIT:** Evet, DB Supabase olacak.
@@ -93,13 +93,13 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
   → **YANIT:** O bilgiler panelden yazılacak her sene ayrı ayrı. Üniversite ve bölüm detaylı olacak.
 
 - [x] **Soru 24 (Drive Yetkilendirme):** Drive klasörü kurumun kendi mailinde mi?
-  → **YANIT:** Kendi adresinde değil. (Harici bir adresten paylaşım veya yetkilendirme yapılacak.)
+  → **YANIT:** Soru 6 ve 7 de yeniden cevaplandı detaylı sekilde.
 
 - [x] **Soru 25 (Görsel İçerik):** Görseller AI ile mi üretilsin?
-  → **YANIT:** Fotoğraflar anlık olarak mevcut değil, şu anlık AI ile üretelim sonrasında gerçek fotoları ekleriz.
+  → **YANIT:** Fotoğraflar anlık olarak mevcut değil, şu anlık AI ile üretelim sonrasında gerçek fotoları ekleriz. Dummy data kullanılacak.
 
 - [x] **Soru 26 (Duyuru Arşivi):** Eski duyurular saklansın mı?
-  → **YANIT:** Gerek yok arşivde tutmaya, sadece güncel duyurular olsun.
+  → **YANIT:** Database de tutulacak. Frontend de ise admin panelinden duyuru girilirken admine duyurunun ne kadar süre yayında kalacağı sorulacak. Varsayılan olarak 2 hafta olarak ayarlanacak.
 
 ---
 **İlerleme:** Round 6/10, Tamamlanma: 30/31 (%96)
@@ -110,7 +110,7 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
   → **YANIT:** ⏳ Kuruma sorulduktan sonra Excel tablosuna erişilecek. (Beklemede).
 
 - [x] **Soru 28 (Drive Erişimi):** Drive klasörü harici bir adresteyse; sistemin bu dosyalara erişebilmesi için ya klasörün "Bağlantıya sahip olan herkes görüntüleyebilir" şeklinde açık olması ya da bizim sistemimize (Service Account) bir "Görüntüleyici" yetkisi verilmesi gerekir. Hangisi sizin için daha uygun?
-  → **YANIT:** Klasör doğrudan görüntülenmeyecek. Sisteme giriş yapan öğrenci, kendi karnesini sistemde görebilecek ve indirebilecek. (Yani karneler sisteme yüklenecek, Drive'dan anlık çekim yapılmayacak.)
+  → **YANIT:** 6 ve 7. sorularda cevaplandı.
 
 - [x] **Soru 29 (AI Görsel Tarzı):** Sitede kullanacağımız AI fotoğraflarının "vibe"ı/havası nasıl olsun? (Örn: Çok modern, teknolojik, cam duvarlı ferah sınıflar mı; yoksa daha sıcak, klasik dershane atmosferi mi?)
   → **YANIT:** Aşırı modern değil, daha çok normal bir sınıf olsun, içinde akıllı tahta bulunsun.
@@ -120,10 +120,10 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
   - 📸 Instagram: https://www.instagram.com/6sigmaegitim
   - 📘 Facebook: https://www.facebook.com/6SigmaEgitimKurumlari
   - 💬 WhatsApp: https://wa.me/905432674462
-  - 📍 Adres: Ataşehir, Şelale Sk. No:29, 23040 Elazığ Merkez/Elazığ
+  - 📍 Adres: Ataşehir, Şelale Sk. No:29, 23040 Elazığ Merkez/Elazığ, Park 23 karşısı.
 
 - [x] **Soru 31 (Hakkımızda Metni):** "Hakkımızda" sayfası için hazır bir kurumsal metniniz var mı, yoksa anahtar kelimeleri verirseniz ben mi bir taslak oluşturayım?
-  → **YANIT:** Hazır metin yok, anahtar veriler verildi. Metin oluşturulacak. Anahtar bilgiler: "6 Sigma Eğitim Kurumları — Hep Bir Adım Önde", 10 senedir Elazığ birincisi ve sıralamaları çıkarıyor, 10 yılda 463 tıp öğrencisi çıkardı.
+  → **YANIT:** Hazır metin yok, Database den bu veriler kullanılacak geliştirme sırasında dummy data kullanılacak.
 
 ---
 **İlerleme:** Round 7/10, Tamamlanma: 36/37 (%97)

@@ -1,2 +1,8 @@
 - [ ] **Soru 27 (Excel Yapısı):** Elinizdeki Excel tablosunda sütun başlıkları nelerdir? (Örn: Ad, Soyad, Öğrenci No, Şifre vb.) İçe aktarma (import) motorunu bu başlıkları otomatik tanıyacak şekilde kodlayabilirim.
   → **YANIT:** ⏳ Kuruma sorulduktan sonra Excel tablosuna erişilecek. (Beklemede).
+- [x] **Soru 22 (Öğrenci Veri Yükleme):** Öğrencilerin sistem üzerinde tanınması için verileri Admin paneline nasıl gireceğiz?
+  → **YANIT:** Öğrencilerin verilerinin Excel tablosu mevcut.
+  - [x] **Soru 23 (Başarı Listesi Detayı):** Yıllara göre başarılar panelden mi girilecek?
+  → **YANIT:** O bilgiler panelden yazılacak her sene ayrı ayrı. Üniversite ve bölüm detaylı olacak. ERp de mevcut mu?
+   [ ] **Soru 27 (Excel Yapısı):** Elinizdeki Excel tablosunda sütun başlıkları nelerdir? (Örn: Ad, Soyad, Öğrenci No, Şifre vb.) İçe aktarma (import) motorunu bu başlıkları otomatik tanıyacak şekilde kodlayabilirim.
+  → **YANIT:** ⏳ Kuruma sorulduktan sonra Excel tablosuna erişilecek. (Beklemede).
