@@ -17,7 +17,7 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
   → **YANIT:** Genel olarak metin olacak ama haftada bir deneme sınav cevap anahtarı paylaşımı yapılıyor duyurular kısmından admin paneli ile bu deneme cevap anahtarları deneme sınavında sonra öğrencilerle paylaşılacak. 
 
 - [x] **Soru 4:** Web sitesinde "Online Kayıt" veya "İletişim Formu" gibi aktif bir veri toplama mekanizması istiyor musunuz?
-  → **YANIT:** Online olarak kayıt alamayacağız ancak müşteriyi veliyi yüz yüze kayıda ve görüşmeye yönlendirecek.
+  → **YANIT:** Online olarak kayıt alamayacağız ancak müşteriyi veliyi yüz yüze kayıda ve görüşmeye yönlendirecek. 
 
 - [x] **Soru 5:** Sitenin dili sadece Türkçe mi olacak, yoksa İngilizce vb. başka diller de düşünülüyor mu?
   → **YANIT:** Tamamen Türkçe olacak.
