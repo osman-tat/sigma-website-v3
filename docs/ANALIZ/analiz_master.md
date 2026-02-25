@@ -143,7 +143,7 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
   → **YANIT:** Hem mobil hem de masaüstü uyumlu olacak. (Full responsive tasarım.)
 
 - [x] **Soru 36 (SEO ve Alan Adı):** Sitenin yayınlanacağı alan adı belli mi? (Örn: 6sigmaegitim.com) Ayrıca Google'da aranabilirlik (SEO) için özel bir beklentiniz var mı?
-  → **YANIT:** Alan adı henüz belli değil. SEO hedefi: "Elazığ dershane" yazıldığında en başta çıkması gerekiyor.
+  → **YANIT:** Alan adı 6sigmadershaneleri.com. SEO hedefi: "Elazığ dershane" yazıldığında en başta çıkması gerekiyor.
 
 - [x] **Soru 37 (Karne Yükleme Süreci):** Karneler Drive'dan çekilmeyecekse; admin panelinden manuel mi yüklenecek, yoksa toplu yükleme (birden fazla PDF'i tek seferde) özelliği de olmalı mı?
   → **YANIT:** Karneler backend'in başka bir servise istek atmasıyla çekilecek. Bu istekte kullanılacak parametreler daha sonra verilecek. (Entegrasyon detayları beklemede.)
@@ -230,10 +230,10 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
   → **YANIT:** Karar: .NET 8 LTS + ASP.NET Core Web API
 
 - [x] **Soru 59 (.NET Backend Kapsamı):** .NET backend'in asıl görevi ne olacak? Aşağıdaki seçeneklerden hangisi/hangileri geçerli?
-  → **YANIT:** Asıl gorevi frontend ten gelen istekleri karsılamak , is sureclerine bakarak veri tababından verileri cekmek ve frontend e servis ve endpoint saglamaktır. swegger open apı ile servisler fronterne sunulacak guvenlık mekanızması olarak JWT token kullanılacak. moduler monolit mımarı ıle gelistrilicek, middle ware kullanılıcak. backend servisleride kendı içinde haberlesirken bu apı keyı kullanmaları sarttır. endpointlerin donus tıpı standart bir result nesnesı olusturulacak, Tum apiler bu sekılde yanıt donucek. Repository design pattern kullanılacak. Entire pattern kullanılacak. n-Tier mimari kullanılacak. Db first yaklasımı ıle yazılacak. Veri tabanından entitileri EF core POWER tools ile tablo ları okuyarak entityleri otomatik olusturacak. IDE olarak VS 2022 kullanılıcak.
+  → **YANIT:** Asıl gorevi frontend ten gelen istekleri karsılamak , is sureclerine bakarak veri tababından verileri cekmek ve frontend e servis ve endpoint saglamaktır. swegger open apı ile servisler frontende sunulacak guvenlık mekanızması olarak JWT token kullanılacak. moduler monolit mımarı ıle gelistrilicek, middle ware kullanılıcak. backend servisleride kendı içinde haberlesirken bu apı keyı kullanmaları sarttır. endpointlerin donus tıpı standart bir result nesnesı olusturulacak, Tum apiler bu sekılde yanıt donucek. Repository design pattern kullanılacak. Entire pattern kullanılacak. n-Tier mimari kullanılacak. Db first yaklasımı ıle yazılacak. Veri tabanından entitileri EF core POWER tools ile tablo ları okuyarak entityleri otomatik olusturacak. IDE olarak VS 2022 kullanılıcak.
 
 - [x] **Soru 60 (Frontend-Backend İletişimi):** Next.js frontend, Supabase'e doğrudan mı bağlanacak (client-side SDK), yoksa tüm veri trafiği .NET backend üzerinden mi geçecek?
-  → **YANIT:** Tüm veri trafiği .NET backend üzerinden geçecek. (Frontend → .NET API → Supabase) . Frontendin dogrudan database erismesi kesınlıkle yasaktır, bu islem IP kısıtlamasıyala engellenecek. sadece backendin database erismesi olacak.
+  → **YANIT:** Tüm veri trafiği .NET backend üzerinden geçecek. (Frontend → .NET API → Supabase) . Frontendin dogrudan database erismesi kesınlıkle yasaktır, bu islem IP kısıtlamasıyala engellenecek. sadece backendin database erismesi olacak. Frontend ile doğrudan bağlantısı söz konusu değildir.
 
 - [x] **Soru 61 (Admin Paneli Yetkilendirme):** Admin paneline giriş için Supabase Auth (e-posta + şifre) mi kullanılacak, yoksa .NET backend'de kendi auth mekanizmanızı mı kurmak istiyorsunuz?
   → **YANIT:** frontend ten kullanıcı gırısı endpointine kullanıcı adı ve sifre ile erislmek istendıgınde, istek backende duser, ligin endpointi  veri tabanında boyle bir kullanıcı varmı dıye sorgular, boyle bir kullanıcı varsa giris saglanir. bu istekler JWT token ile saglanir. 
@@ -242,19 +242,19 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
   → **YANIT:** Tabloları biz frontend bittikten sonra belirleyeceğiz. frontend te ki veri iceren kısımlar dummy veri ile doldurulacak. Frontend tasarımıda veri gelen kısımlar belirlenip entitlerimiz olusturulacak bu entityleri 2. asama olarak tablolara donustrecegız. tabloların ıcınıde dummy dataları ıle dolduracagız 3. asama olarak endpoinlerimiz bu dummy datalarını frontende servis edicek. 4. asama olarak dummy dataları gercek verıler ıle degıstırecegız. 
 
 - [x] **Soru 63 (Docker Kullanımı):** Geliştirme ortamında Docker kullanılacak mı? (HAVSAN standardı gereği Docker-first yaklaşım önerilir.) .NET backend ve Next.js frontend için ayrı container'lar mı olacak?
-  → **YANIT:** HAVSAN standardı gereği Docker-first yaklaşım uygulanacak. frontend ayrı bir proje , backend ayrı bir proje olucak ve ayrı ayrı docker container olucak ve yayına alınıcak.
+  → **YANIT:** HAVSAN standardı gereği Docker-first yaklaşım uygulanacak. frontend ayrı bir proje , backend ayrı bir proje olucak ve ayrı ayrı docker container olucak ve yayına alınıcak. Her kısım farklı bir klasörde yer alıp localde çalıştırmak olmayacak docker compose ile calıstırılacak.
 
 - [x] **Soru 64 (Deployment Platformu):** Site hangi platformda yayınlanacak?
   → **YANIT:** Domain bilgisi: 6sigmadershaneleri.com, hostinger shared hosting. hosting bilgileri havsan sunucularında tutulacak. Repo private git e atılıcak. Main branchına commit atılıdıgında oto deploy sureci tetıklenecek. Bu kısmımda yazılımcılar olarak projeyı gite atmak. sonrasında devops ekıpı uygulamayı yayına alacak.
 
 - [x] **Soru 65 (Deneme Sonucu Sayfası Akışı):** Öğrenci "Deneme Sonuçlarım" butonuna tıklayınca akış şu şekilde mi olacak? 1) Öğrenci numarasını girer → 2) Backend harici API'ye istek atar → 3) PDF döner → 4) Önizleme + İndir butonu gösterilir. Bu akış doğru mu?
-  → **YANIT:** Evet, tam olarak bu akış olacak. Ancak ileride küçük değişiklikler olabilir; sadece öğrenci numarası değil, başka bilgiler de gerekebilir.
+  → **YANIT:** Evet, tam olarak bu akış olacak. Ancak ileride küçük değişiklikler olabilir; Öğrenci TC ve doğum tarihi ile giriş yapacak. Sonrasında backend harici api ye istek gider bu bilgiler doğrultusunda pdf döndürür.
 
 - [x] **Soru 66 (Cevap Anahtarı Yükleme):** Admin panelinden cevap anahtarı PDF yüklenirken; dosyalar Supabase Storage'a mı kaydedilecek, yoksa .NET backend'in dosya sistemine mi yüklenecek?
-  → **YANIT:** Tüm dosyalar veritabanına (Supabase Storage) yüklenecek.
+  → **YANIT:** Tüm dosyalar veritabanına (Supabase Storage) yüklenecek. Kod içerisinde herhangi bir bilgi dosya barınmayacak. Websitesi her açıdan dinamik ve sürdürülebilir olacak. Verilen her bilgi ve yüklenen her pdf admin panelinden kontrol edilebilir olacak.
 
 - [x] **Soru 67 (Proje Zaman Planı):** Bu projenin tahmini teslim süresi veya bir deadline'ı var mı? (Kodlama süresini doğru planlamak için önemli.)
-  → **YANIT:** Hayır, yeterince uzun vakit var. Vakit kısıtlaması yok.
+  → **YANIT:** Hayır, yeterince uzun vakit var. Vakit kısıtlaması yok. En kaliteli ve sorunsuz haliyle ne zaman biterse o zaman teslim edilecek.
 
 ---
 
