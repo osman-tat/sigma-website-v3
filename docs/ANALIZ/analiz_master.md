@@ -194,7 +194,7 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
 - [x] **Soru 49 (Harita Konumu):** Footer'daki embed harita için Google Maps'te tam konum linki verebilir misiniz? Yoksa "Ataşehir, Şelale Sk. No:29, 23040 Elazığ" adresini otomatik aratayım mı?
   → **YANIT:** Google Maps embed iframe kodu verildi. (6 SİGMA Eğitim Kurumları, Elazığ konumu.)
 
-- [x] **Soru 50 (Karne API Detayı):** Backend'in istek atacağı harici servis/API hakkında şu an bildiğiniz herhangi bir detay var mı? (Örn: REST API mi, hangi URL'ye istek atılacak, yanıt formatı PDF mi JSON mu?) Yoksa bu bilgiler tamamen ileriye mi bırakılacak?
+- [ ] **Soru 50 (Karne API Detayı):** Backend'in istek atacağı harici servis/API hakkında şu an bildiğiniz herhangi bir detay var mı? (Örn: REST API mi, hangi URL'ye istek atılacak, yanıt formatı PDF mi JSON mu?) Yoksa bu bilgiler tamamen ileriye mi bırakılacak?
   → **YANIT:** API'den PDF dönülecek. Detaylar sonradan eklenecek.
 
 - [x] **Soru 51 (Anasayfa Hero Bölümü):** Anasayfanın en üstünde (hero/banner alanı) ne gösterilmeli? (Örn: Kurumun sloganı + CTA butonu "Bize Ulaşın", yoksa bir slider/carousel mı olsun?)
@@ -211,6 +211,7 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
 
 - [x] **Soru 55 (Başarılar Sayfa Yapısı):** Başarılar sayfası iki bölümden oluşacak: 1) Yıllara göre tıp kazanımı grafiği, 2) Her yılın detaylı öğrenci listesi. Bu iki bölüm tek sayfada alt alta mı olsun, yoksa yıl seçince detay açılsın (tab/accordion) mı?
   → **YANIT:** Yıl seçince detay açılsın (tab/accordion). O yılın başka bölümlerinin bilgisini de versin.
+  LGS içice bir basarı bolumu olucak tabi buda basarı sayfasında yer alıcak. burda ogrenclerın yuzdelık dılımlerı ve kazandıgı liseler yer alıcak.
 
 - [x] **Soru 56 (Telefon Numarası):** Sitede görünecek telefon numarası WhatsApp numarası (0543 267 44 62) ile aynı mı olacak, yoksa ayrı bir sabit hat numarası da var mı?
   → **YANIT:** Evet, aynı numara kullanılacak.
@@ -248,7 +249,7 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
   → **YANIT:** Domain bilgisi: 6sigmadershaneleri.com, hostinger shared hosting. hosting bilgileri havsan sunucularında tutulacak. Repo private git e atılıcak. Main branchına commit atılıdıgında oto deploy sureci tetıklenecek. Bu kısmımda yazılımcılar olarak projeyı gite atmak. sonrasında devops ekıpı uygulamayı yayına alacak.
 
 - [x] **Soru 65 (Deneme Sonucu Sayfası Akışı):** Öğrenci "Deneme Sonuçlarım" butonuna tıklayınca akış şu şekilde mi olacak? 1) Öğrenci numarasını girer → 2) Backend harici API'ye istek atar → 3) PDF döner → 4) Önizleme + İndir butonu gösterilir. Bu akış doğru mu?
-  → **YANIT:** Evet, tam olarak bu akış olacak. Ancak ileride küçük değişiklikler olabilir; Öğrenci TC ve doğum tarihi ile giriş yapacak. Sonrasında backend harici api ye istek gider bu bilgiler doğrultusunda pdf döndürür.
+  → **YANIT:** Öğrenci TC ve doğum tarihi nı giricek. Sonrasında backend harici api ye istek gider bu bilgiler doğrultusunda pdf döndürür.
 
 - [x] **Soru 66 (Cevap Anahtarı Yükleme):** Admin panelinden cevap anahtarı PDF yüklenirken; dosyalar Supabase Storage'a mı kaydedilecek, yoksa .NET backend'in dosya sistemine mi yüklenecek?
   → **YANIT:** Tüm dosyalar veritabanına (Supabase Storage) yüklenecek. Kod içerisinde herhangi bir bilgi dosya barınmayacak. Websitesi her açıdan dinamik ve sürdürülebilir olacak. Verilen her bilgi ve yüklenen her pdf admin panelinden kontrol edilebilir olacak.
