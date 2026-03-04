@@ -1,321 +1,156 @@
-# 📋 6 Sigma Eğitim Kurumları — Gereksinim Analizi
+# 🧠 6 Sigma Eğitim Kurumları - Kapsamlı Yazılım Gereksinim Analizi (PRD & SRS)
 
-> **Kaynak:** `analiz_master.md` — 10 Round, 67 Soru, %97 Tamamlanma
-> **Tarih:** 2026-02-24
-> **Hazırlayan:** HAVSAN Antigravity
+Bu belge, **6 Sigma Eğitim Kurumları** web sitesi ve yönetim paneli projesinin **Tek Doğruluk Kaynağıdır (Single Source of Truth)**. HAVSAN İteratif Analiz Sistemi kapsamında yürütülen detaylı analiz ve kurum mülakatlarının çıktıları doğrultusunda hazırlanmış olup, projede alınacak her teknik ve kavramsal karara temel teşkil edecektir. 
 
----
-
-## 1. Proje Özeti
-
-**Müşteri:** 6 Sigma Eğitim Kurumları (Elazığ)
-**Slogan:** "Hep Bir Adım Önde"
-**Konum:** Ataşehir, Şelale Sk. No:29, 23040 Elazığ Merkez/Elazığ
-**Faaliyet:** YKS ve LGS sınav hazırlık dershanesi (tek şube, iki program)
-**Öne Çıkan Başarı:** 10 yılda 463 tıp öğrencisi, 10 senedir Elazığ birincisi
-
-**Proje Amacı:** Kurumsal tanıtım web sitesi + admin paneli + öğrenci karne/sonuç görüntüleme sistemi.
+Bu belge yüzeysel tanımlamalardan arındırılarak, her modülün iş mantığını, veri akışını, kısıtlarını ve mimari tercihlerini en ince ayrıntısına kadar dokümante etmeyi amaçlar.
 
 ---
 
-## 2. Teknoloji Yığını (Tech Stack)
+## 1. Proje Genel Bakışı ve Stratejik Hedefler
 
-| Katman | Teknoloji | Açıklama |
-|--------|-----------|----------|
-| **Frontend** | Next.js (React) | SSR/SSG destekli, SEO uyumlu |
-| **Backend** | .NET 8 LTS (ASP.NET Core Web API) | Tüm iş mantığı ve API gateway |
-| **Veritabanı** | Supabase (PostgreSQL) | Veri saklama + Storage (dosyalar) |
-| **Auth** | .NET Custom Auth (JWT) | Admin paneli yetkilendirmesi |
-| **Geliştirme** | Docker (Docker-first) | İzole geliştirme ortamı |
-| **Deployment** | ⏳ Henüz belirlenmedi | Coolify/Azure/VPS sonra kararlaştırılacak |
-| **Dil** | Sadece Türkçe | Çoklu dil desteği yok |
+### 1.1. Projenin Amacı
+Geleneksel bir dershane tanıtım sitesinin ötesine geçerek; dinamik içerik yönetimine sahip, modern bir kullanıcı deneyimi (UX) sunan ve öğrencilerin dijital karne/sınav sonuçlarına otonom şekilde ulaşmasını sağlayan kurumsal bir web portalı ve bu portalı besleyen merkezi bir yönetim paneli inşa etmektir. Tamamen veri odaklı (Data-Driven) bir sistem kurgulanarak, tüm kurumsal metinler, başarı istatistikleri ve duyurular veritabanından dinamik olarak yönetilecektir.
 
-### 2.1. Mimari Prensipler
+### 1.2. Paydaşlar ve Hedef Kitle
+- **Mevcut Öğrenciler ve Veliler:** Kurum duyurularını takip etmek, açık cevap anahtarlarına erişmek ve TC Kimlik No ile güvenli bir şekilde kendi AI analizi deneme karnelerini görüntülemek/indirmek için sistemi kullanacak ana kitledir.
+- **Potansiyel Öğrenciler/Müşteriler:** Kurumun vizyonunu, başarılarını ve sunduğu fiziki/eğitsel olanakları inceleyip yüz yüze görüşmeye veya WhatsApp iletişimine ikna olması beklenen ziyaretçilerdir.
+- **Yöneticiler ve Rehberlik Birimi:** Sistemi içerik (duyuru, başarı, ayarlar) bakımından besleyecek, kurumu dijital alanda yönetecek yetkili kullanıcılardır.
 
-```
-┌──────────────┐    REST API    ┌──────────────────┐    SQL   ┌──────────────┐
-│   Next.js    │ ────────────── │  .NET 8 Backend  │ ──────── │   Supabase   │
-│  (Frontend)  │                │  (Web API)       │          │  (PostgreSQL │
-│              │                │                  │ ──────── │  + Storage)  │
-└──────────────┘                │  ┌─────────────┐ │          └──────────────┘
-                                │  │ Harici API  │ │
-                                │  │ (Karne Srv.)│ │
-                                │  └─────────────┘ │
-                                └──────────────────┘
-```
-
-**Temel Kurallar:**
-- Frontend'de **hiçbir bilgi hardcode** olmayacak (çalışma saatleri, linkler, adres dahil)
-- **Tüm veri trafiği** .NET backend üzerinden geçecek (Frontend → .NET → Supabase)
-- Backend harici API'lere istek atabilecek (karne servisi, ileride eklenecek servisler)
+### 1.3. Tasarım ve UI/UX Felsefesi
+- **Vibe ve Atmosfer:** Çok ütopik olmayan ancak modernliği yansıtan; cam-duvarlı, aydınlık, düzenli ve teknolojiyle iç içe (akıllı tahta kullanımı vb.) bir "Yeni Nesil Eğitim Kurumu" hissi. Ziyaretçiye güven ve prestij duygusu aşılanmalıdır.
+- **Renk Paleti & Kimlik:** 
+  - **Ana Renkler:** Lacivert (Güven, Disiplin) ve Kırmızı (Dinamizm, Heyecan).
+  - **Açık Arka Planlar:** Beyaz ve tonları (Ferahlık, Okunabilirlik).
+  - **Vurgu (Accent) Rengi:** Altın/Turuncu tonları (Dikkat çekici CTA'lar, Başarı vurgusu).
+- **Animasyon ve Performans:** Minimalist mikro-etkileşimler (hover efektleri, scroll ile gelen hafif fade-in geçişleri). Animasyonlar sistem performansını, LCP (Largest Contentful Paint) ve FCP (First Contentful Paint) sürelerini etkilemeyecek şekilde optimize edilecektir.
 
 ---
 
-## 3. Sayfa Yapısı ve İçerik
+## 2. Web Sitesi (Frontend) - Ziyaretçi Denayimi
 
-### 3.1. Navbar (Üst Menü)
+Web sitesi, Ziyaretçi ile Kurum arasındaki ilk temas noktasıdır. %100 Duyarlı (Responsive) olacaktır. Tüm veriler `.NET API` üzerinden Supabase'den çekilecektir. Prensip olarak *sayfalara hardcoded (sabit) veri gömülmeyecektir*.
 
-| Menü Öğesi | Sayfa |
-|------------|-------|
-| Anasayfa | `/` |
-| Hakkımızda | `/hakkimizda` |
-| Başarılarımız | `/basarilar` |
-| Duyurular | `/duyurular` |
-| YKS | `/yks` |
-| LGS | `/lgs` |
+### 2.1. Global Navigasyon (Header & Footer)
+- **Header (Navbar):** 
+  - Logo (Favicon ve sol üst köşe yerleşimi, SVG kalitesinde).
+  - Menü Linkleri: *Anasayfa, Hakkımızda, Başarılarımız, Duyurular, YKS, LGS.*
+  - CTA (Call to Action) Butonu: "Deneme Sonucumu Öğren" (Header'da göze çarpan bir buton olarak konumlandırılması UX açısından önerilir).
+  - Davranış: Sayfa aşağı kaydırıldığında küçülerek ekrana yapışan (Sticky/Glassmorphism) navbar.
+- **Footer:** 
+  - Dinamik İçerik: Panelden yönetilen adres, e-posta ve iletişim telefonları.
+  - Sosyal Medya İkonları: Instagram, Facebook, WhatsApp (Yeni sekmede açılacak şekilde yapılandırılmış).
+  - Harita: Google Maps IFrame embed kodu.
+  - Dinamik Mesai Saatleri Bilgisi: "Hafta İçi: 09:00 - 19:00" gibi veritabanından çekilen yapı.
+  - Legal: Copyright metni, KVKK - Gizlilik Politikası linkleri (Gelecekte ihtiyaç olunabileceğinden altyapısı hazır bırakılacak).
 
-> Hero bölümü **OLMAYACAK**. Navbar altından direkt içerik başlayacak.
+### 2.2. Anasayfa (Landing Page) Akışı
+1. **(Hero Alanına Alternatif) Minimal Karşılama:** Devasa bir slider yerine kurumun güçlü bir sloganı ve hemen altında kullanıcıyı YKS veya LGS sayfalarına yönlendiren belirgin yönlendirme kartları bulunduracaktır.
+2. **"Neden Bizi Tercih Etmelisiniz?" Seksiyonu:** Kurumun sunduğu eşsiz imkanlar (Açık büfe ders ortamı, lüks kütüphane/etüt salonları, zengin deneme ağı) grid (ızgara) yapısında, uygun ikonografi ve kısa açıklamalar eşliğinde sunulacaktır.
+3. **Başarı Özeti Seksiyonu:** Başarılarımız sayfasındaki dev verinin sadece bir "Özet Kartı" (Örn: "2023'te 45 Tıp Fakültesi!") şeklinde gösterilip, kullanıcıyı "Tüm Başarılarımız" sayfasına sevk eden modül.
+4. **Güncel Duyurular (Vitrin):** En güncel 3 duyurunun kart yapısıyla anasayfada yer aldığı bölüm.
 
----
+### 2.3. YKS ve LGS Detay Sayfaları
+Bu iki sayfa birbiriyle benzer iskelete sahip ancak tamamen farklı içerik metinleri taşıyacaktır. 
+- **İçerik Stratejisi:** Ders programı tablosu *kullanılmayacak*. Bunun yerine "6 Sigma'da YKS Süreci Nasıl İşler?" temasında, 9.-10.-11. ve 12. sınıf ile Mezunlara yönelik kurumsal yaklaşım metinleştirilecektir.
+- LGS sayfası için de LGS yaş grubunun pedagojik ihtiyaçlarına ve soru tiplerine nasıl hazırlanıldığına dair dinamik metin blokları olacaktır.
 
-### 3.2. Anasayfa (`/`)
+### 2.4. Başarılarımız Portalı
+Verisinin tamamı Admin Panelinden girilen, sitenin en kritik satış noktalarından (Selling Point) biridir.
+- **Bölüm 1 - Grafiksel Gösterim (Veri Görselleştirme):** Yalnızca "Tıp Fakültesi" kazanımları baz alınarak son 8 (veya girilen tüm yılların) yılı kapsayan bar grafiği (Recharts veya Chart.js kütüphanesi). 
+- **Bölüm 2 - Yıl Bazlı Akordeon Liste (Tabular Data):** 
+  - Kullanıcı "2023" yılına tıkladığında o yıla ait bir liste açılır.
+  - Bu liste, YKS için "Ahmet Y. - Hacettepe Tıp" gibiyken; LGS için "Ayşe K. - Ankara Fen Lisesi (%0.2 Dilim)" formatını destekleyecek dinamik sütun mimarisine sahip olmalıdır.
 
-Daha önce netleştirilen yapıya göre; navbar altından direkt içerik bölümleri sıralanacak. **Hero/banner alanı yok.**
+### 2.5. Duyurular ve Açık Kaynak Merkezi
+- **İşleyiş:** API'den liste olarak tüm duyurular (yayında olduğu belirtilenler) çekilecek. Kategorileme UI'da bulunmayacaktır.
+- **İçerik Tipleri:** Bir duyuru sadece bir metin olabileceği gibi, altında N adet PDF dosyası barındıran (Örn: LGS Deneme 3 Cevap Anahtarı A Kitapçığı.pdf, B Kitapçığı.pdf) zengin bir yapı da olabilir. Kullanıcılar bunları giriş yapmadan önizleyip indirebilecektir.
+- **Yayın Süresi Mantığı:** Duyuru girilirken panelde "Bitiş Tarihi" veya "X Gün Yayında Kal" ayarlanır. Bu tarih geldiğinde UI'da (Frontend) gösterilmez. Ancak geçmiş veri kaybolmaması adına veritabanında "IsActive: false" (veya tarih filtresi) statüsü ile saklanır.
 
-**İçerik bölümleri (önerilen sıra):**
-1. Kurumsal tanıtım alanı (slogan + kısa açıklama)
-2. Neden Biz? (özet özellikler)
-3. Başarılarımız özeti (tıp grafiği preview)
-4. Son duyurular listesi (preview)
-5. İletişim CTA (WhatsApp yönlendirme)
-
----
-
-### 3.3. Hakkımızda (`/hakkimizda`)
-
-**Anahtar veriler (metin AI tarafından oluşturulacak):**
-- 6 Sigma Eğitim Kurumları — "Hep Bir Adım Önde"
-- 10 senedir Elazığ birincisi ve sıralamaları çıkarıyor
-- 10 yılda 463 tıp öğrencisi çıkardı
-
----
-
-### 3.4. Başarılarımız (`/basarilar`)
-
-**Yapı:**
-1. **Yıllara göre tıp kazanımı grafiği** (son 8 yıl, sadece Tıp, bar chart)
-2. **Yıl bazında detay** — Tab/Accordion yapısı:
-   - Yıl seçildiğinde o yılın öğrenci listesi açılır
-   - Her öğrenci: İsim + Kazandığı Üniversite/Bölüm
-   - Fotoğraf yok, sadece metin
-   - Diğer bölümler de (Hukuk, Mühendislik vb.) yıl detayında gösterilecek
-
-**Veri girişi:** Admin panelinden her sene ayrı ayrı girilecek.
-
----
-
-### 3.5. Duyurular (`/duyurular`)
-
-**Özellikler:**
-- Sadece listeleme (kategori filtresi yok)
-- Bildirim sistemi yok (sosyal medya üzerinden yapılıyor)
-- Eski duyurular arşivlenmeyecek, sadece güncel duyurular gösterilecek
-- Duyuru tipleri:
-  - Genel duyurular (metin)
-  - Deneme cevap anahtarı (PDF — herkese açık)
-  - Deneme sınav sonucu görüntüleme (öğrenci girişi gerekli - aşağıda detaylı)
-  - Tatil bilgisi
-
-**Cevap Anahtarı:** Admin panelinden PDF olarak yüklenir, herkese açık listelenir.
+### 2.6. "Deneme Sonuçlarım" Sistemi (Kişiselleştirilmiş PDF Vizörü)
+Sistemin en karmaşık ve kritik entegrasyon noktasıdır.
+- **İş Akışı (Business Akışı):**
+  1. Kullanıcıdan iki input alınır: **TC Kimlik No** ve **Doğum Tarihi** (DD/MM/YYYY formatında, takvim seçici ile de desteklenebilir). Form Client-Side validasyonundan (örn: TC 11 hane olmalı) geçirilir.
+  2. Frontend, formu payload olarak **.NET Backend'indeki özel Proxy Endpoint'e** (`POST /api/students/exam-result`) iletir.
+  3. **.NET Backend** kendi üstüne gelen isteğin API sınırlarını / IP'sini onaylar, ardından (varsa external bir Authorization header ile) ERP/Dış Kurum Servisine backend-to-backend istekte bulunur.
+  4. Dış servis eğer veriyi bulursa "PDF'i Base64 formatında" veya ilgili URL linki olarak .NET'e döner. Öğrenci bulunamazsa dış sistem `404 Not Found` döner.
+  5. .NET sonucu bir Result objesi içinde Frontend'e sarıp gönderir.
+  6. Frontend Base64 verisini bir Client-Side PDF Görüntüleyici (PDFObject.js vb.) kullanarak Modal veya yeni sayfada render eder. Dosyayı cihazına "İndir" butonu aktive edilir.
+- **Güvenlik Prensipleri:** Ziyaretçi doğrudan harici API'ye istek ATAMAZ. İstek kesinlikle Backend'in süzgecinden geçmelidir (CORS ve API Key koruması için). Rate-Limiting (Brute force TC denemelerini engellemek için aynı IP'den gelen isteklere sınır konulması) uygulanabilir.
 
 ---
 
-### 3.6. YKS ve LGS Sayfaları (`/yks`, `/lgs`)
+## 3. Yönetim (Admin) Paneli - İçerik Kontrol Merkezi
 
-**İçerik (her iki sayfa için):**
-- Takvim/program yok
-- Hazırlık sürecinin nasıl yapıldığı
-- Öğrencilere kazandırılan kazanımlar
+Yönetim paneli kurum sahibinin ve vizyoner personelin siteyi yaşayan bir organizma olarak tutmasını sağlar.
 
-**"Neden Bizi Tercih Etmelisiniz" bölümü:**
-- Kütüphane
-- Etüt odaları
-- Özel ders imkanı
-- Soru çözüm saatleri
-- "Açık büfe" ders imkanı
-- Kaliteli yayınlar
-- Sık deneme sınavları
-- Rehberlik imkanı
+### 3.1. Rol ve Yetki Yönetimi (Auth & Identity)
+- **Giriş Metodolojisi:** Email/Şifre ile .NET Backend'in `POST /api/auth/login` endpoint'ine istek atılarak başlar. 
+- **Token State:** Dönüşte alınan JWT, XSS saldırılarından korunmak için HttpOnly Cookie içinde (veya uygun güvenli bir state manager içinde) saklanmalıdır. 
+- **Yetkiler:** Kurum Sahibi ve Rehberlik Birimi arasında Panelde özellik kısıtlaması *yapılmayacaktır*; iki rol de SuperAdmin karakteristiği taşıyacaktır.
 
----
-
-### 3.7. İletişim
-
-**Ayrı bir sayfa yok**, footer ve WhatsApp yönlendirmesi yeterli. Mesaj formu yok.
+### 3.2. Çekirdek Yönetim Modülleri (CRUD)
+- **Site Ayarları Modülü:** 
+  - İletişim, adres bilgileri, sosyal medya bağlantı linkleri güncellenebilir. Sistem `site_settings` tablosundaki konfigürasyondan beslenir.
+- **İçerik (CMS) Modülü:** 
+  - LGS metinleri, YKS metinleri, Hakkımızda sayfası metin blokları Rich Text Editor (Zengin Metin Editörü - CKEditor veya Quill benzeri) kullanılarak formatlı (kalın, italik, liste) girilebilmesi sağlanacaktır.
+- **Duyuru Yönetimi Modülü:**
+  - **Başlık, Kategori, Metin** alanları yer alacaktır. Seçilen PDF dosyaları (çoklu seçim ile) Supabase Storage (S3 uyumlu Bucket) içine "yüklenir", dönen path/URL veritabanında ilişkisel `duyuru_dokumanlari` tablosuna yazılır.
+  - Gösterimde kalıcı olma süresi gün/tarih olarak belirlenir.
+- **Tarihsel Başarı Ekleme Modülü (Bulk & Manuel):** 
+  - Yıl bilgisi, Öğrenci Adı, Sınav Tipi (YKS/LGS), Kazanılan Durum/Dilim bilgileri girilebilmelidir.
+  - (İleri Fazda: Bu verilerin uygun başlıklı Excel ile toplu alınabilmesi/Parse edilmesi üzerine altyapı hazırlanacaktır).
 
 ---
 
-### 3.8. Footer (Tüm Sayfalarda)
+## 4. Teknik Mimari ve Altyapı Kararları
 
-| Öğe | Detay |
-|-----|-------|
-| Sosyal Medya | Instagram, Facebook, WhatsApp |
-| Adres | Ataşehir, Şelale Sk. No:29, 23040 Elazığ |
-| Telefon | 0543 267 44 62 (WhatsApp ile aynı) |
-| Harita | Google Maps embed (iframe kodu mevcut) |
-| Çalışma Saatleri | DB'den çekilecek |
-| Telif Hakkı | Telif hakkı notu |
+Sistem kalitesi (Software Quality Attributes), sürdürülebilirlik, bakım yapılabilirlik (Maintainability) ve genişletilebilirlik üzerine kurgulanmıştır.
 
-**Sosyal Medya Linkleri:**
-- 📸 Instagram: https://www.instagram.com/6sigmaegitim
-- 📘 Facebook: https://www.facebook.com/6SigmaEgitimKurumlari
-- 💬 WhatsApp: https://wa.me/905432674462
+### 4.1. Backend Uygulaması (.NET 8 LTS)
+- **Sistem Mimarisi:** N-Tier (Çok Katmanlı) veya Clean Architecture (Onyon Mimari) ilkeleri. Projede `Core`, `Entities`, `DataAccess`, `Business` ve `WebAPI` katmanları keskin sınırlarla ayrılmış olacaktır.
+- **Tasarım Kalıpları (Design Patterns):** 
+  - Veritabanı işlemleri için `Repository Pattern` ve `Unit of Work`.
+  - Servis ve API arasında veri transformasyonları için (DTO) Data Transfer Object kalıpları ve mapping toolları (AutoMapper).
+- **ORM:** Entity Framework Core (EF Core 8). Prosedür: Db-First veya Code-First Migration uyumlu tasarım. Supabase PostgreSQL özelliklerini (UUID destekleri vb.) tam çalıştıracak Npgsql sağlayıcısı kullanılacaktır. 
+- **Endpoint Standartlaştırması:** API'ye atılan her istek bir kalıplaşmış Wrapper class döner:
+  ```json
+  {
+    "success": true, // veya false
+    "data": { ...istenilen_model... },
+    "error": { "code": "", "message": "Hata varsa buraya" },
+    "timestamp": "2026-03-04T12:00:00Z"
+  }
+  ```
+- **Güvenlik Katmanı:** CORS kısıtlamaları frontend domain'ine özel ayarlanacaktır. Admin paneli rotaları `[Authorize]` attribute ile JWT validasyonu isteyecektir.
 
----
+### 4.2. Veritabanı ve Medya Yönetimi (Supabase / Postgres)
+- RDBMS Gücü: Bütün ilişkisel veriler güçlü bir PostgreSQL veritabanında tutulacak. Schema yönetimi düzgün yapılmalı. Constraints (Foreign Keys vb.) kesinlikle oluşturulmalıdır.
+- **Supabase Güvenliği (RLS - Row Level Security Analizi):** Proje mimarisine göre direkt supabase JS client üzerinden okuma/yazma YASAKTIR. (Role dayalı veri sızıntısını önlemek adına Backend mecburi orkestratör görevindedir). Veritabanı erişim secret/key bilgileri sadece kendi network'ündeki .NET container'ı tarafından erişilebilir olacak. Frontend DB'yi asla tanımayacaktır.
+- **Supabase Storage (Bucket):** Resimler ve PDF'ler, genel ulaşıma açık `public` bucket'larda veya yetkiye bağlı `private` bucket'larda (özel imzalı URL'ler ile) sunulacak şekilde konfigüre edilecektir.
 
-## 4. Deneme Sonucu / Karne Görüntüleme Sistemi
+### 4.3. Frontend İstemcisi (Next.js & React)
+- SSR (Server Side Rendering) ve SSG (Static Site Generation) karışımı melez (Hybrid) model. SEO için "Hakkımızda", "Anasayfa" gibi sayfalar Server'da render edilecek, Dinamik Duyurular Client-Side'da Hydrate edilebilir olacaktır.
+- Zustand veya Context API yardımıyla panelin (Admin) App-wide stateleri ve bildirim/toast stateleri yürütülecektir.
 
-### 4.1. Kullanıcı Akışı
-
-```
-Öğrenci "Deneme Sonuçlarım" butonuna tıklar
-        │
-        ▼
-Öğrenci numarasını girer (+ ileride ek bilgiler gerekebilir)
-        │
-        ▼
-Frontend → .NET Backend → Harici Karne API'sine istek atar
-        │
-        ▼
-API'den PDF döner
-        │
-        ▼
-PDF Önizleme + "İndir" butonu gösterilir
-```
-
-> [!WARNING]
-> **Öğrenci sisteme giriş yapmıyor!** Şifre/kullanıcı adı yok. Sadece karne/sonuç görmek istediğinde gerekli bilgileri giriyor.
-
-### 4.2. Karne Türleri
-
-1. **Standart deneme karnesi** — Bazı denemelerde verilen karne (PDF indirme)
-2. **Yapay zeka destekli karne** — Ayrı bir programda hazırlanıp Drive klasöründe saklanan karneler
-
-### 4.3. Harici API Entegrasyonu
-
-| Parametre | Değer |
-|-----------|-------|
-| Yanıt formatı | PDF |
-| API URL | ⏳ Sonra belirlenecek |
-| İstek parametreleri | ⏳ Sonra belirlenecek (öğrenci no + ek bilgiler?) |
-| Protokol | ⏳ Sonra belirlenecek (muhtemelen REST) |
+### 4.4. Altyapı, Konteynerizasyon ve DevOps
+- **Docker & Docker Compose:** Root dizinde bir `docker-compose.yml` olacak. Front (Next.js) `port: 3000`, API (.NET) `port: 8080` de çalışacak şekilde izole (bridge network) ağlar tanımlanacak. 
+- Local development sırasında ortamlar (Environments) `.env`, `.env.development` kullanılarak veri tabanı bağlantıları dinamik hale getirilecektir. Appsettings.json production için ayrıca ezilebilecektir.
+- **Deployment Senaryosu (Deployment Topology):** Hostinger vb. sunucular üzerine Coolify Paneli gibi bir CD (Continuous Deployment) çözümü kullanılıp, Private GitHub reposundan Main Branch'e push geldiğinde imajlar build edilerek down-time (kesinti süresi) yaşanmadan restart edecektir.
 
 ---
 
-## 5. Admin Paneli
+## 5. Proje İterasyon Fazları (Roadmap)
+Bu PRD sonrasında çalışılacak task dağılımı şu şekildedir:
 
-### 5.1. Genel Özellikler
-
-- **Erişim:** Kurum sahibi + Rehberlik birimi (aynı yetki seviyesi, tek rol)
-- **Yetkilendirme:** .NET custom auth (JWT tabanlı)
-- **Ayrı URL:** Admin paneli ayrı bir route'ta (`/admin`)
-
-### 5.2. Admin Paneli Modülleri
-
-| Modül | İşlev |
-|-------|-------|
-| **Duyuru Yönetimi** | Duyuru oluşturma, düzenleme, silme |
-| **Cevap Anahtarı Yönetimi** | PDF yükleme (Supabase Storage) |
-| **Başarılar Yönetimi** | Yıl bazında öğrenci başarıları CRUD |
-| **Site Ayarları** | Çalışma saatleri, iletişim bilgileri, sosyal medya linkleri, adres |
-| **Öğrenci Yönetimi** | Öğrenci verileri import (Excel), listeleme |
-
-### 5.3. Öğrenci Verileri
-
-- Mevcut Excel tablosu var (sütun başlıkları ⏳ kuruma sorularak belirlenecek)
-- Excel import özelliği olacak
+| Faz # | Faz Adı | Kapsam ve Beklenen Çıktılar | Puan / Ağırlık |
+|-------|---------|------------------------------|----------------|
+| **Faz 1** | **Temel Altyapı ve Konteynerizasyon** | Docker ağlarının (FE ve BE) oluşturulması, repoların initlanması. Supabase projesi açılışı, `.env` tanımları. HAVSAN klasör standartlarının oturtulması. | %10 |
+| **Faz 2** | **Frontend (Dummy Model)** | Tüm web sayfalarının responsive olarak modern renk/animasyon setleriyle kodlanması. İhtiyaç olan her yerin (Başarılar, Duyurular vb.) hard-coded dummy JSON veriler ile çalışan komponentler (Component Driven Design) olarak ortaya çıkarılması. | %35 |
+| **Faz 3** | **Veritabanı Şeması ve EF Core Data** | FH'de ortaya çıkan Dummy JSON objelerine bakıp, eksiksiz PostgreSQL ilişkisel tablolarını tasarlama. .NET EF Core'a Db-First mantığıyla modelleri aktarma ve Context sınıflarını hazır hale getirme. Dummy dataların gerçek SQL'e gömülmesi (Seed Data). | %15 |
+| **Faz 4** | **Backend (.NET API) Servisleri N-Tier Modülü** | WebAPI endpoint'lerinin yazılması (CRUD operasyonları). JWT ve Middleware kurgularının oturtulması. Frontend servislerinin (axios/fetch yapıları) bu gerçek API'lere uçlanması. Data'nın entegre hale gelmesi. | %25 |
+| **Faz 5** | **B2B Entegrasyonlar ve Admin Panel Gelişimi** | Deneme Karneyi getirecek "Dış ERP" API bağlantılarının kodlanması, hata tolerans yapıları (Polly / Retry Mechanism). Admin paneli Auth süreçleri dahil tüm giriş çıkışların neticelendirilip Prod'da çalışır demoya hazır edilmesi. Excel Import gibi lüks eklentilerin ilavesi (İsteğe bağlı opsiyonel). | %15 |
 
 ---
 
-## 6. Veritabanı Şeması (Supabase / PostgreSQL)
-
-### 6.1. Önerilen Tablolar
-
-```sql
--- Admin kullanıcıları
-admin_kullanicilar (
-  id, email, sifre_hash, ad_soyad, rol, 
-  olusturulma_tarihi, son_giris
-)
-
--- Duyurular
-duyurular (
-  id, baslik, icerik, kategori, 
-  cevap_anahtari_url, -- Supabase Storage URL
-  yayinlanma_tarihi, aktif
-)
-
--- Başarılar (yıl bazında)
-basarilar (
-  id, yil, ogrenci_adi, universite, 
-  bolum, kategori -- tıp, hukuk, mühendislik vb.
-)
-
--- Site Ayarları (key-value)
-site_ayarlari (
-  id, anahtar, deger, aciklama
-  -- Örn: calisma_saatleri, telefon, adres, 
-  -- instagram_url, facebook_url, whatsapp_url
-)
-
--- Öğrenciler
-ogrenciler (
-  id, ogrenci_no, ad, soyad, 
-  program -- YKS/LGS
-)
-
--- YKS/LGS Sayfa İçerikleri
-sayfa_icerikleri (
-  id, sayfa_kodu, -- 'yks', 'lgs', 'hakkimizda'
-  baslik, icerik, sira
-)
-```
-
----
-
-## 7. Tasarım ve UX Kararları
-
-### 7.1. Renk Paleti
-
-| Rol | Renk |
-|-----|------|
-| Ana Renk 1 | **Lacivert** (kurumsal) |
-| Ana Renk 2 | **Kırmızı** (kurumsal) |
-| Zemin | **Beyaz** |
-| Accent/Vurgu | **Altın/Turuncu** |
-
-### 7.2. Genel Tasarım
-
-- **Responsive:** Tam mobil + masaüstü uyumlu
-- **Animasyonlar:** Olabilir ama performansı düşürmeyecek seviyede
-- **Görseller:** Şu an AI ile üretilecek, sonra gerçek fotoğraflarla değiştirilecek
-- **Görsel tarzı:** Normal sınıf ortamı, akıllı tahtalı (aşırı modern değil)
-- **Logo:** Dijital dosya mevcut (SVG/PNG), favicon olarak da kullanılacak
-
-### 7.3. SEO
-
-- **Hedef anahtar kelime:** "Elazığ Dershane" → 1. sırada çıkması gerekiyor
-- **Alan adı:** ⏳ Henüz belirlenmedi
-- Semantic HTML, meta tags, proper heading hierarchy
-
----
-
-## 8. Beklemede Olan Konular
-
-| # | Konu | Durum | Bağımlılık |
-|---|------|-------|------------|
-| 1 | Excel sütun başlıkları (Soru 27) | ⏳ Kuruma sorulacak | Öğrenci import modülü |
-| 2 | Harici karne API detayları (Soru 50) | ⏳ Sonradan eklenecek | Karne görüntüleme modülü |
-| 3 | Deployment platformu (Soru 64) | ⏳ Belirlenmedi | Yayına alma aşaması |
-| 4 | Google Drive normalization (Soru 19) | ⏳ Sonra konuşulacak | İsim eşleştirme |
-
-> [!NOTE]
-> Bu konular projenin başlamasını engellemez. Frontend dummy data ile %100 geliştirilebilir. Beklemede olan konular backend entegrasyon aşamasında netleştirilecektir.
-
----
-
-## 9. Proje Zaman Planı
-
-- **Deadline:** Yok, yeterli süre mevcut
-- **Yaklaşım:** Frontend-first (HAVSAN standardı)
-- **Sıra:** Analiz ✅ → Frontend (dummy data) → Backend (.NET) → Entegrasyon → Deployment
+> **📄 Versiyon Bilgisi:** v1.1 - Detaylandırılmış Spesifikasyon Sürümü.  
+> Bu belge, kodlama süreci boyunca sürekli açık olacak bir referans kitabıdır. Teknik kararlarda bu ana iskeletten çıkılması halinde değişiklik talebi (Change Request) olarak proje sürecine yansıyacak ve bu kaynak yeniden senkronlanacaktır. (Değişmez Kural 8).
