@@ -1,7 +1,6 @@
-Database de öğrenci bilgileri tutulacak mı?
-Tc ve doğum tarihi hangi api ile sorgulanacak?
-Ortak db mi kullanılacak?
-İstek drive api sine yoksa karne api sine mi atılacak?
+Database de öğrenci bilgileri tutulacak mı? -> ogrencı datası tutmamıza gerek yok. karne apısıne dogrudan ogrencının giridıgı bilgiler girilicek.
+Tc ve doğum tarihi hangi api ile sorgulanacak? bu bılgıler nerden kontrol edilicek. -> karne apısınde kontrol edılıcek.
+Ortak db mi kullanılacak? tum apıler ortak bir db mı kullanacak, karne api si ayrı bir db mi kullanaca mı? -> moduler mımarı arastılıcak ve ordakı mımarı kullanılcak.
 Erp sisteminde deneme sınav sonucunu alacak endpoint var mı?
 - [x] **Soru 50 (Karne API Detayı):** Backend'in istek atacağı harici servis/API hakkında şu an bildiğiniz herhangi bir detay var mı? (Örn: REST API mi, hangi URL'ye istek atılacak, yanıt formatı PDF mi JSON mu?) Yoksa bu bilgiler tamamen ileriye mi bırakılacak?
   → **YANIT:** API'den PDF dönülecek. Detaylar sonradan eklenecek.- sadece PDF mı, ogrencı ismi donulucekmı.
