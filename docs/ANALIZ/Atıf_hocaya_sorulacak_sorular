@@ -4,4 +4,4 @@ Ortak db mi kullanılacak?
 İstek drive api sine yoksa karne api sine mi atılacak?
 Erp sisteminde deneme sınav sonucunu alacak endpoint var mı?
 - [x] **Soru 50 (Karne API Detayı):** Backend'in istek atacağı harici servis/API hakkında şu an bildiğiniz herhangi bir detay var mı? (Örn: REST API mi, hangi URL'ye istek atılacak, yanıt formatı PDF mi JSON mu?) Yoksa bu bilgiler tamamen ileriye mi bırakılacak?
-  → **YANIT:** API'den PDF dönülecek. Detaylar sonradan eklenecek.- sadece PDF mı, ogrencı ismi donulucekmı.
+  → **YANIT:** API'den PDF dönülecek. Detaylar sonradan eklenecek.- sadece PDF mı, ogrencı ismi donulucekmı. 
