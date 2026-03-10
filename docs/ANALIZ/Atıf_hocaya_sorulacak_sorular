@@ -3,4 +3,8 @@ Tc ve doğum tarihi hangi api ile sorgulanacak? bu bılgıler nerden kontrol edi
 Ortak db mi kullanılacak? tum apıler ortak bir db mı kullanacak, karne api si ayrı bir db mi kullanaca mı? -> moduler mımarı arastılıcak ve ordakı mımarı kullanılcak.
 Erp sisteminde deneme sınav sonucunu alacak endpoint var mı?
 - [x] **Soru 50 (Karne API Detayı):** Backend'in istek atacağı harici servis/API hakkında şu an bildiğiniz herhangi bir detay var mı? (Örn: REST API mi, hangi URL'ye istek atılacak, yanıt formatı PDF mi JSON mu?) Yoksa bu bilgiler tamamen ileriye mi bırakılacak?
+<<<<<<< HEAD
   → **YANIT:** API'den PDF dönülecek. Detaylar sonradan eklenecek.- sadece PDF mı, ogrencı ismi donulucekmı.   
+=======
+  → **YANIT:** API'den PDF dönülecek. Detaylar sonradan eklenecek.- sadece PDF mı, ogrencı ismi donulucekmı. 
+>>>>>>> 76361a0006a0fce9ed9c9034f3469b2c10ffd3d2
