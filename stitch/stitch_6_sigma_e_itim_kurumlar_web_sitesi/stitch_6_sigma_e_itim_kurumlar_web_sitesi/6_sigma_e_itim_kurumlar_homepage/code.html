@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a237e",
+                        "accent-red": "#c62828",
+                        "accent-gold": "#f9a825",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#121220",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background-light font-display text-slate-900 overflow-x-hidden">
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-primary/10">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-primary text-white p-2 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" style="">functions</span>
+</div>
+<h1 class="text-primary text-2xl font-black tracking-tight" style="">6 SIGMA</h1>
+</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-slate-700 hover:text-primary font-medium transition-colors" href="#" style="">Anasayfa</a>
+<a class="text-slate-700 hover:text-primary font-medium transition-colors" href="#" style="">Başarılarımız</a>
+<a class="text-slate-700 hover:text-primary font-medium transition-colors" href="#" style="">Duyurular</a>
+<a class="text-slate-700 hover:text-primary font-medium transition-colors" href="#" style="">YKS</a>
+<a class="text-slate-700 hover:text-primary font-medium transition-colors" href="#" style="">LGS</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-accent-gold hover:bg-amber-600 text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-accent-gold/20 flex items-center gap-2" style="">
+<span class="material-symbols-outlined text-lg" style="">fact_check</span>
+<span class="" style="">Deneme Sonucumu Öğren</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<section class="relative py-20 lg:py-32 px-6 overflow-hidden">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-8">
+<h1 class="text-primary text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight" style="">
+                        Geleceğinizi <br/> <span class="text-accent-red" style="">Şekillendiriyoruz</span>
+</h1>
+<p class="text-slate-600 text-lg lg:text-xl max-w-lg leading-relaxed" style="">
+                        Modern eğitim anlayışı, yapay zeka destekli analizler ve uzman kadromuz ile YKS ve LGS sınavlarında fark yaratın.
+                    </p>
+<div class="grid sm:grid-cols-2 gap-4 mt-4">
+<div class="group cursor-pointer bg-primary p-6 rounded-xl text-white shadow-xl shadow-primary/20 hover:-translate-y-1 transition-transform">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl" style="">terminal</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" style="">arrow_forward</span>
+</div>
+<h3 class="text-xl font-bold mb-1" style="">YKS Programları</h3>
+<p class="text-white/70 text-sm" style="">Üniversite hedeflerine giden yolda profesyonel destek.</p>
+</div>
+<div class="group cursor-pointer bg-accent-red p-6 rounded-xl text-white shadow-xl shadow-accent-red/20 hover:-translate-y-1 transition-transform">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl" style="">child_care</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" style="">arrow_forward</span>
+</div>
+<h3 class="text-xl font-bold mb-1" style="">LGS Programları</h3>
+<p class="text-white/70 text-sm" style="">En iyi liseler için sağlam bir temel ve strateji.</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-slate-200 rounded-3xl overflow-hidden shadow-2xl relative z-10" data-alt="Modern classroom with students and teacher" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCqNjD40hjQakOCPBhDvOJjTqLbKkZT6qot9DAnyV75dsiu8lfi9UaOoV37rby909h3pkP2chea-6kwocfhPtPQXAatfDiHXyQ_MBNCIpPl4DjSLDzU8mtvNSwiU2bw0QfZ7OD6MSOZ9EAdyL9_S0XUSrKrAecp9kYtnmdgLnujJtvhTZE1nKn-dHFqqR_Ef6652awY34HkPoa8zu41hglASFqYxUsv0n8sYGhVbzWRSrqCwK6eLmNkwjPlYQxjaMJRZ-zr67IftuM"); background-size: cover; background-position: center center;'></div>
+<div class="absolute -top-6 -right-6 w-32 h-32 bg-accent-gold rounded-full -z-10 blur-2xl opacity-30"></div>
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-primary rounded-full -z-10 blur-3xl opacity-20"></div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col items-center text-center mb-16 gap-4">
+<h2 class="text-primary text-3xl lg:text-5xl font-black tracking-tight uppercase" style="">Neden Bizi Tercih Etmelisiniz?</h2>
+<div class="h-1.5 w-24 bg-accent-gold rounded-full"></div>
+<p class="text-slate-500 max-w-2xl text-lg mt-2" style="">Başarıya giden yolda ihtiyacınız olan her şeyi bir araya getirdik.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="p-8 rounded-2xl border border-slate-100 hover:border-primary/20 hover:bg-primary/[0.02] transition-all flex flex-col gap-4">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="">restaurant</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900" style="">Açık Büfe Ders Ortamı</h3>
+<p class="text-slate-500 leading-relaxed text-sm" style="">Esnek ve verimli ders çalışma alanları ile her öğrenciye özel çalışma imkanı sunuyoruz.</p>
+</div>
+<div class="p-8 rounded-2xl border border-slate-100 hover:border-primary/20 hover:bg-primary/[0.02] transition-all flex flex-col gap-4">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="">auto_stories</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900" style="">Lüks Kütüphane &amp; Etüt Salonları</h3>
+<p class="text-slate-500 leading-relaxed text-sm" style="">Sessiz, modern ve konforlu ortamlarımızla odaklanma sorununuzu ortadan kaldırıyoruz.</p>
+</div>
+<div class="p-8 rounded-2xl border border-slate-100 hover:border-primary/20 hover:bg-primary/[0.02] transition-all flex flex-col gap-4">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="">query_stats</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900" style="">Zengin Deneme Ağı</h3>
+<p class="text-slate-500 leading-relaxed text-sm" style="">Türkiye geneli geniş kapsamlı sınav simülasyonları ile seviyenizi anlık görün.</p>
+</div>
+<div class="p-8 rounded-2xl border border-slate-100 hover:border-primary/20 hover:bg-primary/[0.02] transition-all flex flex-col gap-4">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="">smart_toy</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900" style="">AI Destekli Karne Analizi</h3>
+<p class="text-slate-500 leading-relaxed text-sm" style="">Yapay zeka algoritmalarımızla eksiklerinizi nokta atışı belirliyor ve yol haritası çiziyoruz.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary to-blue-900 p-10 lg:p-16 text-white flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+<div class="flex flex-col gap-4 text-center lg:text-left z-10">
+<span class="bg-accent-gold/20 text-accent-gold px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest border border-accent-gold/30 w-fit mx-auto lg:mx-0" style="">Başarı Özeti</span>
+<h2 class="text-4xl lg:text-5xl font-black" style="">2023'te 45 Tıp Fakültesi Kazanımı!</h2>
+<p class="text-white/80 text-lg" style="">Türkiye'nin en seçkin üniversitelerine binlerce öğrenci yerleştirdik.</p>
+</div>
+<a class="group z-10 flex items-center gap-4 bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-gold hover:text-white transition-all" href="#" style="">
+                        Tüm Başarılarımızı Gör
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" style="">arrow_forward</span>
+</a>
+<div class="absolute right-0 top-0 w-96 h-96 bg-accent-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+</div>
+</div>
+</section>
+<section class="py-24 px-6 bg-background-light">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div class="flex flex-col gap-2">
+<h2 class="text-primary text-3xl font-black uppercase" style="">Güncel Duyurular</h2>
+<div class="h-1 w-16 bg-accent-red rounded-full"></div>
+</div>
+<button class="text-primary font-bold hover:underline flex items-center gap-1" style="">Tüm Duyurular <span class="material-symbols-outlined text-sm" style="">open_in_new</span></button>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white p-2 rounded-2xl shadow-sm border border-slate-100 group">
+<div class="h-48 rounded-xl bg-slate-100 mb-6 overflow-hidden" data-alt="Examination papers and pencil" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD99XML194_qpvFzetuaBKGQcs4kNB6cScAXdMKMcAKFpFWvcbJz-nd26SsOYdsIx9q4zoQ94QByyLeM1kPvVOcmrDJnHyPOrY2_h0npic037JtsLXkms5c61wLGiC5egNMLsOxv-IxmbtmOZFn_FoS4xo53NfstBtIvvAGUvmdiCMmytr_NmDZMarrYIJX_Hw_NEPK8k_ld666BAZnGQCkGAuaGnavRORreamp9TNLJXgMi-S8ZPG3PURcSOG9Sgcvs8ECo4IgpYU"); background-size: cover; background-position: center center;'></div>
+<div class="px-4 pb-6">
+<div class="flex items-center gap-3 mb-3">
+<span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase" style="">Sınav Kayıt</span>
+<span class="text-slate-400 text-xs font-medium" style="">15 Mart 2024</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors mb-3 leading-snug" style="">Mart Ayı Türkiye Geneli Deneme Kayıtları Başladı!</h3>
+<p class="text-slate-500 text-sm line-clamp-2" style="">Gerçek sınav provası için yerinizi hemen ayırtın. Son başvuru tarihini kaçırmayın.</p>
+</div>
+</div>
+<div class="bg-white p-2 rounded-2xl shadow-sm border border-slate-100 group">
+<div class="h-48 rounded-xl bg-slate-100 mb-6 overflow-hidden" data-alt="Student consultation session" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCiIhbIpS0vUShmUGpEOddHBGauNsyUbnh7ggREhFmETFxxjGf5m1k3z7cYT-IbN6CGZSEC9btAUt02S-Ft2rT_lNEST1ZiD6rxmMGnQ161CjZKTAzi_uUTwjEx3avqmRLQ3n1XceK8BM0zJyTji5vMqKLeu5OsactlrpsLjRon2ilPeyWDnO_XSnjBsQ3jAqlPXA3zweG0mdxl-vK7s7gq8AYMf-lLHd1tMQHpd4L2Xzg5dkvl92kAfn2EseLezIc5pyYU3a1Wn_k"); background-size: cover; background-position: center center;'></div>
+<div class="px-4 pb-6">
+<div class="flex items-center gap-3 mb-3">
+<span class="bg-accent-red/10 text-accent-red text-xs font-bold px-3 py-1 rounded-full uppercase" style="">Rehberlik</span>
+<span class="text-slate-400 text-xs font-medium" style="">12 Mart 2024</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors mb-3 leading-snug" style="">Sınav Kaygısı ve Motivasyon Semineri</h3>
+<p class="text-slate-500 text-sm line-clamp-2" style="">Uzman psikoloğumuz eşliğinde gerçekleşecek olan seminerimiz tüm öğrencilerimize açıktır.</p>
+</div>
+</div>
+<div class="bg-white p-2 rounded-2xl shadow-sm border border-slate-100 group">
+<div class="h-48 rounded-xl bg-slate-100 mb-6 overflow-hidden" data-alt="Students working together" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmBs6240SmZEB3zj7bpfEPxcPEBpXTllV544X9IdnoRdIKIa2K0AgtHviBdfpS7F9k_2e5KVMZR6OGFG7kFUI3nfvUQdUsMYw8xZC_pvHSzCi7DM_geaPuuXt0x713qFDQmVS4zz7NkPkLUqD-hTFAJkZwKfSsgzb-m1d_J15-p6G-S0sTMlocgK_qjAF97U7A-xUoEJ3BJx_4_10yryGBDrjxqi5IzWplY1t2-M8mj1V7atHVF6rlFRggg0RjnNS8g31-qw-wGC4"); background-size: cover; background-position: center center;'></div>
+<div class="px-4 pb-6">
+<div class="flex items-center gap-3 mb-3">
+<span class="bg-accent-gold/10 text-accent-gold text-xs font-bold px-3 py-1 rounded-full uppercase" style="">Yeni Dönem</span>
+<span class="text-slate-400 text-xs font-medium" style="">10 Mart 2024</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors mb-3 leading-snug" style="">Yaz Kampı Kayıtlarımız Erken Dönem Avantajıyla!</h3>
+<p class="text-slate-500 text-sm line-clamp-2" style="">Gelecek yılın hazırlıklarına erkenden başlayın, avantajlı fiyatlardan yararlanın.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#0d1b4a] text-white pt-24 pb-12 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-4 gap-12 mb-16">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="bg-white text-primary p-2 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" style="">functions</span>
+</div>
+<h2 class="text-white text-2xl font-black tracking-tight" style="">6 SIGMA</h2>
+</div>
+<p class="text-white/60 leading-relaxed text-sm" style="">
+                        Eğitimde mükemmelliği hedefleyen, başarı odaklı ve modern yaklaşımlarıyla Türkiye'nin öncü eğitim kurumlarından biridir.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" href="#" style="">
+<span class="material-symbols-outlined text-xl" style="">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" href="#" style="">
+<span class="material-symbols-outlined text-xl" style="">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all" href="#" style="">
+<span class="material-symbols-outlined text-xl" style="">camera</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<h4 class="text-lg font-bold" style="">Hızlı Menü</h4>
+<ul class="flex flex-col gap-4 text-white/60 text-sm">
+<li class="" style=""><a class="hover:text-white transition-colors" href="#" style="">Eğitim Programları</a></li>
+<li class="" style=""><a class="hover:text-white transition-colors" href="#" style="">Başarı Tablomuz</a></li>
+<li class="" style=""><a class="hover:text-white transition-colors" href="#" style="">İletişim</a></li>
+<li class="" style=""><a class="hover:text-white transition-colors" href="#" style="">KVKK Aydınlatma Metni</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-6">
+<h4 class="text-lg font-bold" style="">İletişim Bilgileri</h4>
+<ul class="flex flex-col gap-4 text-white/60 text-sm">
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-accent-gold" style="">location_on</span>
+<span class="" style="">Eğitim Mah. Üniversite Cad. No:123 <br/>Kadıköy, İstanbul</span>
+</li>
+<li class="flex items-center gap-3" style="">
+<span class="material-symbols-outlined text-accent-gold" style="">call</span>
+<span class="" style="">+90 (212) 555 06 06</span>
+</li>
+<li class="flex items-center gap-3" style="">
+<span class="material-symbols-outlined text-accent-gold" style="">mail</span>
+<span class="" style="">info@6sigma.edu.tr</span>
+</li>
+<li class="flex items-center gap-3" style="">
+<span class="material-symbols-outlined text-accent-gold" style="">schedule</span>
+<span class="" style="">Hafta içi: 08:30 - 21:00 <br/>Hafta sonu: 09:00 - 18:00</span>
+</li>
+</ul>
+</div>
+<div class="flex flex-col gap-6">
+<h4 class="text-lg font-bold" style="">Lokasyonumuz</h4>
+<div class="h-48 rounded-xl bg-white/5 border border-white/10 overflow-hidden relative" data-location="Istanbul" style="">
+<div class="absolute inset-0 bg-slate-800 flex items-center justify-center text-white/30 text-xs italic">
+<span class="material-symbols-outlined text-4xl mb-2 block" style="">map</span>
+<span class="block" style="">Haritayı Gör</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-xs">
+<p class="" style="">© 2024 6 Sigma Eğitim Kurumları. Tüm Hakları Saklıdır.</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#" style="">Gizlilik Politikası</a>
+<a class="hover:text-white transition-colors" href="#" style="">Kullanım Koşulları</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

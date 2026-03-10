@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>6 Sigma Achievement Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d1b4a",
+                        "primary-light": "#1a3693",
+                        "background-light": "#ffffff",
+                        "background-dark": "#f8fafc",
+                        "accent-red": "#d32f2f",
+                        "accent-gold": "#ffd700",
+                        "surface-dark": "#ffffff",
+                        "border-dark": "#e2e8f0",
+                        "text-muted": "#64748b"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-primary font-display flex min-h-screen">
+<div class="relative flex h-auto min-h-screen w-64 flex-col bg-[#ffffff] shrink-0 border-r border-border-dark">
+<div class="flex flex-col h-full p-4">
+<div class="flex gap-3 mb-6 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary">school</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-primary text-base font-bold leading-normal">6 Sigma Admin</h1>
+<p class="text-text-muted text-xs font-medium leading-normal">Eğitim Kurumları</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 flex-1 mt-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 text-primary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-primary">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 text-primary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-primary">web</span>
+<p class="text-sm font-medium leading-normal">Site Yönetimi</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 text-primary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-primary">settings_applications</span>
+<p class="text-sm font-medium leading-normal">Site Ayarları</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 text-primary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-primary">campaign</span>
+<p class="text-sm font-medium leading-normal">Duyuru Yönetimi</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary font-semibold border-l-4 border-accent-red" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+<p class="text-sm leading-normal">Başarı Yönetimi</p>
+</a>
+</div>
+<div class="mt-auto pt-4 border-t border-border-dark flex flex-col gap-3">
+<div class="flex items-center gap-3 px-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">
+            MY
+        </div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-primary">Mehmet Yılmaz</span>
+<span class="text-xs text-text-muted">Sistem Yöneticisi</span>
+</div>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-accent-red/10 text-primary hover:text-accent-red transition-colors mt-2" href="#">
+<span class="material-symbols-outlined text-primary">logout</span>
+<p class="text-sm font-medium leading-normal">Çıkış Yap</p>
+</a>
+</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+<header class="flex items-center justify-between px-8 py-4 border-b border-border-dark bg-background-light/90 backdrop-blur-sm sticky top-0 z-10">
+<div class="flex items-center gap-2">
+<a class="text-text-muted hover:text-primary text-sm font-medium transition-colors" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-text-muted text-sm">chevron_right</span>
+<span class="text-primary text-sm font-bold">Başarı Yönetimi</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-surface-dark border border-border-dark hover:bg-gray-50 text-primary text-sm font-semibold transition-colors">
+<span class="material-symbols-outlined text-sm">upload_file</span>
+                    Excel İle Toplu Yükle
+                </button>
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary hover:bg-primary-light text-white text-sm font-semibold transition-colors shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Yeni Başarı Ekle
+                </button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto p-8 bg-background-dark">
+<div class="flex flex-col gap-6 mb-8">
+<div class="flex items-center justify-between gap-4 flex-wrap bg-surface-dark p-4 rounded-xl border border-border-dark shadow-sm">
+<div class="flex border-b border-border-dark gap-8">
+<button class="flex flex-col items-center justify-center border-b-2 border-primary text-primary pb-3 pt-2">
+<span class="text-sm font-bold tracking-wide">Tümü</span>
+</button>
+<button class="flex flex-col items-center justify-center border-b-2 border-transparent text-text-muted hover:text-primary pb-3 pt-2 transition-colors">
+<span class="text-sm font-semibold tracking-wide">YKS</span>
+</button>
+<button class="flex flex-col items-center justify-center border-b-2 border-transparent text-text-muted hover:text-primary pb-3 pt-2 transition-colors">
+<span class="text-sm font-semibold tracking-wide">LGS</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative">
+<select class="appearance-none bg-background-dark border border-border-dark text-primary font-medium text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 pr-8">
+<option>2022</option>
+<option>2021</option>
+<option>2020</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-text-muted">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+<div class="relative w-64">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+<span class="material-symbols-outlined text-text-muted text-sm">search</span>
+</div>
+<input class="bg-background-dark border border-border-dark text-primary text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5 placeholder-text-muted" placeholder="Öğrenci Ara..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-dark rounded-xl border border-border-dark overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left text-text-muted">
+<thead class="text-xs text-primary uppercase bg-background-dark border-b border-border-dark">
+<tr>
+<th class="px-6 py-4 font-bold w-16" scope="col">#</th>
+<th class="px-6 py-4 font-bold w-24" scope="col">Yıl</th>
+<th class="px-6 py-4 font-bold" scope="col">Öğrenci Adı</th>
+<th class="px-6 py-4 font-bold w-32" scope="col">Sınav Tipi</th>
+<th class="px-6 py-4 font-bold" scope="col">Kazanılan Yer / Dilim</th>
+<th class="px-6 py-4 font-bold text-right w-32" scope="col">İşlemler</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-dark">
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-medium text-primary">1</td>
+<td class="px-6 py-4 font-medium text-primary">2022</td>
+<td class="px-6 py-4 text-primary font-bold">Ahmet Yılmaz</td>
+<td class="px-6 py-4">
+<span class="bg-blue-100 text-blue-800 border border-blue-200 text-xs font-semibold px-2.5 py-1 rounded-full">YKS</span>
+</td>
+<td class="px-6 py-4 font-medium text-primary">Hacettepe Üniversitesi Tıp Fakültesi</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-primary transition-colors p-1 rounded hover:bg-gray-100">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="text-text-muted hover:text-accent-red transition-colors p-1 rounded hover:bg-gray-100 ml-1">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors bg-background-dark/50">
+<td class="px-6 py-4 font-medium text-primary">2</td>
+<td class="px-6 py-4 font-medium text-primary">2022</td>
+<td class="px-6 py-4 text-primary font-bold">Ayşe Durmuş</td>
+<td class="px-6 py-4">
+<span class="bg-purple-100 text-purple-800 border border-purple-200 text-xs font-semibold px-2.5 py-1 rounded-full">LGS</span>
+</td>
+<td class="px-6 py-4 font-medium text-primary">Ankara Fen Lisesi <span class="text-primary font-bold ml-1">(%0.2 Dilim)</span></td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-primary transition-colors p-1 rounded hover:bg-gray-100">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="text-text-muted hover:text-accent-red transition-colors p-1 rounded hover:bg-gray-100 ml-1">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-medium text-primary">3</td>
+<td class="px-6 py-4 font-medium text-primary">2022</td>
+<td class="px-6 py-4 text-primary font-bold">Can Eren</td>
+<td class="px-6 py-4">
+<span class="bg-purple-100 text-purple-800 border border-purple-200 text-xs font-semibold px-2.5 py-1 rounded-full">LGS</span>
+</td>
+<td class="px-6 py-4 font-medium text-primary">ODTÜ Fen Lisesi <span class="text-primary font-bold ml-1">(%0.5 Dilim)</span></td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-primary transition-colors p-1 rounded hover:bg-gray-100">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+<button class="text-text-muted hover:text-accent-red transition-colors p-1 rounded hover:bg-gray-100 ml-1">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between px-6 py-4 border-t border-border-dark bg-background-dark">
+<span class="text-sm text-text-muted font-medium">Toplam: <span class="font-bold text-primary">53 kayıt</span></span>
+<nav class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-gray-200 text-text-muted disabled:opacity-50">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary text-white text-sm font-semibold">1</button>
+<button class="w-8 h-8 rounded hover:bg-gray-200 text-primary text-sm font-medium transition-colors">2</button>
+<button class="w-8 h-8 rounded hover:bg-gray-200 text-primary text-sm font-medium transition-colors">3</button>
+<span class="px-2 text-text-muted">...</span>
+<button class="p-1 rounded hover:bg-gray-200 text-text-muted">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</main>
+</div>
+<div class="fixed inset-0 bg-primary/20 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+<div class="bg-surface-dark border border-border-dark rounded-xl shadow-2xl w-full max-w-lg overflow-hidden flex flex-col">
+<div class="flex items-center justify-between px-6 py-4 border-b border-border-dark bg-background-dark/50">
+<h3 class="text-lg font-bold text-primary">Yeni Başarı Ekle</h3>
+<button class="text-text-muted hover:text-primary transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 flex flex-col gap-5 overflow-y-auto max-h-[70vh]">
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-primary">Yıl</label>
+<input class="bg-background-light border border-border-dark text-primary font-medium text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" type="number" value="2023"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-primary">Sınav Tipi</label>
+<div class="flex bg-background-dark rounded-lg p-1 border border-border-dark">
+<button class="flex-1 py-1.5 text-sm font-bold rounded-md bg-surface-dark text-primary shadow-sm border border-border-dark">YKS</button>
+<button class="flex-1 py-1.5 text-sm font-semibold rounded-md text-text-muted hover:text-primary transition-colors">LGS</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-primary">Öğrenci Adı</label>
+<input class="bg-background-light border border-border-dark text-primary font-medium text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 placeholder-text-muted/70" placeholder="Örn: Ali Veli" type="text"/>
+</div>
+<div class="flex flex-col gap-2 bg-blue-50/50 p-4 rounded-lg border border-blue-100">
+<label class="text-sm font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">school</span>
+                        Kazanılan Üniversite ve Bölüm
+                    </label>
+<input class="bg-background-light border border-border-dark text-primary font-medium text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 placeholder-text-muted/70 mt-1" placeholder="Örn: Boğaziçi Üniversitesi Bilgisayar Mühendisliği" type="text"/>
+</div>
+</div>
+<div class="flex items-center justify-end gap-3 px-6 py-4 border-t border-border-dark bg-background-dark/50">
+<button class="px-5 py-2.5 text-sm font-semibold text-primary bg-background-light border border-border-dark rounded-lg hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-gray-100 transition-colors">
+                    İptal
+                </button>
+<button class="px-5 py-2.5 text-sm font-semibold text-white bg-primary rounded-lg hover:bg-primary-light focus:ring-4 focus:outline-none focus:ring-primary/30 shadow-md shadow-primary/20 transition-all">
+                    Kaydet
+                </button>
+</div>
+</div>
+</div>
+</body></html>

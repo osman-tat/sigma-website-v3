@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2a20d",
+                        "primary-dark": "#d48d0b",
+                        "navy-custom": "#0d1b4a",
+                        "navy-light": "#1a237e",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#0d1b4a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-navy-custom font-display text-navy-custom dark:text-white">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-navy-custom/80 backdrop-blur-md border-b border-slate-200 dark:border-white/10 shadow-sm transition-all duration-300">
+<div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" style="">school</span>
+<span class="text-xl font-black tracking-tight text-navy-custom dark:text-white uppercase" style="">6 SİGMA</span>
+</div>
+<div class="hidden lg:flex items-center gap-8">
+<a class="text-sm font-semibold text-navy-custom/80 dark:text-white/80 hover:text-primary dark:hover:text-primary transition-colors" href="#" style="">Anasayfa</a>
+<a class="text-sm font-semibold text-navy-custom/80 dark:text-white/80 hover:text-primary dark:hover:text-primary transition-colors" href="#" style="">Başarılarımız</a>
+<a class="text-sm font-semibold text-navy-custom/80 dark:text-white/80 hover:text-primary dark:hover:text-primary transition-colors" href="#" style="">Duyurular</a>
+<div class="flex gap-2 bg-slate-100 dark:bg-navy-light/50 p-1 rounded-lg border border-slate-200 dark:border-white/10">
+<a class="text-xs font-bold px-3 py-1.5 rounded-md hover:bg-white dark:hover:bg-navy-custom shadow-sm transition-all text-navy-custom dark:text-white" href="#" style="">YKS</a>
+<a class="text-xs font-bold px-3 py-1.5 rounded-md hover:bg-white dark:hover:bg-navy-custom shadow-sm transition-all text-navy-custom dark:text-white" href="#" style="">LGS</a>
+</div>
+<button class="bg-primary hover:bg-primary-dark text-navy-custom px-6 py-2.5 rounded-lg font-bold text-sm transition-all shadow-lg shadow-primary/20 hover:-translate-y-0.5" style=""><span style="color: rgb(26, 35, 126); background-color: rgb(249, 171, 36);">Deneme Sonucumu Öğren</span></button>
+</div>
+<button class="lg:hidden text-navy-custom dark:text-white" style="">
+<span class="material-symbols-outlined text-3xl" style="">menu</span>
+</button>
+</div>
+</nav>
+<div class="layout-container flex h-full grow flex-col min-h-screen pt-20">
+<main class="flex-1">
+<div class="relative overflow-hidden bg-[#1a237e] py-20 px-4">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
+</div>
+<div class="relative max-w-4xl mx-auto text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-6" style="">shield_person</span>
+<h1 class="text-white text-5xl font-black leading-tight tracking-tight mb-4" style="">Deneme Sonuçlarım</h1>
+<p class="text-white/80 text-lg font-medium max-w-2xl" style="">
+                        TC Kimlik Numaranız ile Karne Analizinize Ulaşın. Kişiselleştirilmiş gelişim raporunuzu hemen görüntüleyin.
+                    </p>
+</div>
+</div>
+<div class="max-w-6xl mx-auto px-4 -mt-12 pb-20">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-5">
+<div class="bg-white dark:bg-navy-custom p-8 rounded-xl shadow-xl border border-slate-100 dark:border-navy-custom/50">
+<h3 class="text-xl font-bold mb-6 flex items-center gap-2 text-navy-custom dark:text-white" style="">
+<span class="material-symbols-outlined text-primary" style="">lock_open</span>
+                                Güvenli Sorgulama
+                            </h3>
+<div class="space-y-6">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-navy-custom dark:text-white/80" style="">TC Kimlik No</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-navy-custom/50 dark:text-white/50" style="">fingerprint</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-lg border border-slate-200 dark:border-navy-custom/80 bg-slate-50 dark:bg-navy-custom/50 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-navy-custom dark:text-white" maxlength="11" placeholder="11 Haneli TC Kimlik numaranız" type="text"/>
+</div>
+<p class="text-xs text-navy-custom/60 dark:text-white/60 mt-1" style="">Sadece öğrenciye ait kimlik numarası ile sorgulama yapılabilir.</p>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-navy-custom dark:text-white/80" style="">Doğum Tarihi</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-navy-custom/50 dark:text-white/50" style="">calendar_month</span>
+<input class="w-full pl-12 pr-4 py-4 rounded-lg border border-slate-200 dark:border-navy-custom/80 bg-slate-50 dark:bg-navy-custom/50 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all text-navy-custom dark:text-white" type="date"/>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary-dark text-navy-custom font-bold py-4 rounded-lg flex items-center justify-center gap-2 transition-all transform hover:scale-[1.01] active:scale-[0.99] shadow-lg shadow-primary/20" style="">
+<span class="material-symbols-outlined" style="">analytics</span>
+                                    Sonuçlarımı Getir
+                                </button>
+<div class="flex items-center justify-center gap-2 pt-4 text-navy-custom/60 dark:text-white/60">
+<span class="material-symbols-outlined text-sm" style="">lock</span>
+<span class="text-xs font-medium" style="">Verileriniz 256-bit SSL ile korunmaktadır</span>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="bg-white dark:bg-navy-custom p-8 rounded-xl shadow-xl border border-slate-100 dark:border-navy-custom/50 h-full flex flex-col items-center justify-center text-center">
+<h4 class="text-3xl font-black text-navy-custom dark:text-white mb-2" style="">Mehmet Yılmaz</h4>
+<p class="text-lg text-navy-custom/70 dark:text-white/70 font-medium mb-8" style="">YKS Deneme 4 - Mart 2026</p>
+<div class="flex justify-center gap-4">
+<button class="bg-primary hover:bg-primary-dark text-navy-custom px-8 py-3 rounded-lg font-bold flex items-center gap-2 transition-colors shadow-lg shadow-primary/20" style="">
+<span class="material-symbols-outlined" style="">download</span>
+                                        PDF İndir
+                                    </button>
+<button class="border-2 border-slate-200 dark:border-navy-custom/80 hover:bg-slate-50 dark:hover:bg-navy-custom/80 text-navy-custom dark:text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 transition-colors" style="">
+<span class="material-symbols-outlined" style="">print</span>
+                                        Yazdır
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 flex flex-wrap justify-center gap-6">
+<div class="flex items-center gap-3 bg-white dark:bg-navy-custom px-6 py-3 rounded-full shadow-sm border border-slate-100 dark:border-navy-custom/50">
+<span class="material-symbols-outlined text-green-500" style="">verified_user</span>
+<span class="text-sm font-bold text-navy-custom dark:text-white" style="">Rate Limited - Güvenli Erişim</span>
+</div>
+<div class="flex items-center gap-3 bg-white dark:bg-navy-custom px-6 py-3 rounded-full shadow-sm border border-slate-100 dark:border-navy-custom/50">
+<span class="material-symbols-outlined text-blue-500" style="">lock</span>
+<span class="text-sm font-bold text-navy-custom dark:text-white" style="">256-bit SSL Şifreleme</span>
+</div>
+<div class="flex items-center gap-3 bg-white dark:bg-navy-custom px-6 py-3 rounded-full shadow-sm border border-slate-100 dark:border-navy-custom/50">
+<span class="material-symbols-outlined text-primary" style="">gavel</span>
+<span class="text-sm font-bold text-navy-custom dark:text-white" style="">KVKK Uyumlu</span>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-navy-custom text-white/70 py-16 px-4 border-t border-white/10 mt-auto">
+<div class="max-w-6xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 border-b border-white/10 pb-12">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-primary text-3xl" style="">school</span>
+<h3 class="text-xl font-black tracking-tight uppercase" style="">6 SİGMA</h3>
+</div>
+<p class="text-sm leading-relaxed text-white/80" style="">
+                    Eğitimde mükemmelliği hedefleyen yenilikçi ve başarı odaklı kurum.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold uppercase text-sm tracking-wider" style="">Hızlı Menü</h4>
+<ul class="space-y-3">
+<li class="" style=""><a class="text-sm hover:text-primary transition-colors flex items-center gap-2" href="#" style=""><span class="material-symbols-outlined text-[16px]" style="">chevron_right</span> Anasayfa</a></li>
+<li class="" style=""><a class="text-sm hover:text-primary transition-colors flex items-center gap-2" href="#" style=""><span class="material-symbols-outlined text-[16px]" style="">chevron_right</span> Başarılarımız</a></li>
+<li class="" style=""><a class="text-sm hover:text-primary transition-colors flex items-center gap-2" href="#" style=""><span class="material-symbols-outlined text-[16px]" style="">chevron_right</span> Duyurular</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold uppercase text-sm tracking-wider" style="">İletişim</h4>
+<ul class="space-y-4">
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-primary shrink-0" style="">call</span>
+<div class="flex flex-col">
+<span class="text-xs text-white/50" style="">Telefon</span>
+<span class="text-sm text-white hover:text-primary transition-colors cursor-pointer" style="">+90 (555) 123 45 67</span>
+</div>
+</li>
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-primary shrink-0" style="">mail</span>
+<div class="flex flex-col">
+<span class="text-xs text-white/50" style="">E-posta</span>
+<span class="text-sm text-white hover:text-primary transition-colors cursor-pointer" style="">info@6sigma.edu.tr</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold uppercase text-sm tracking-wider" style="">Lokasyon</h4>
+<ul class="space-y-4">
+<li class="flex items-start gap-3" style="">
+<span class="material-symbols-outlined text-primary shrink-0" style="">location_on</span>
+<div class="flex flex-col">
+<span class="text-xs text-white/50" style="">Merkez Şube</span>
+<span class="text-sm text-white leading-relaxed" style="">Örnek Mahallesi, Eğitim Caddesi<br/>No: 123 Kadıköy / İstanbul</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+<p class="" style="">© 2024 6 Sigma Eğitim Kurumları. Tüm hakları saklıdır.</p>
+<div class="flex gap-4">
+<a class="hover:text-white transition-colors" href="#" style="">KVKK Metni</a>
+<a class="hover:text-white transition-colors" href="#" style="">Çerez Politikası</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
