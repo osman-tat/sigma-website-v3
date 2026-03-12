@@ -65,6 +65,7 @@ Verisinin tamamı Admin Panelinden girilen, sitenin en kritik satış noktaları
 - **İşleyiş:** API'den liste olarak tüm duyurular (yayında olduğu belirtilenler) çekilecek. Kategorileme UI'da bulunmayacaktır.
 - **İçerik Tipleri:** Bir duyuru sadece bir metin olabileceği gibi, altında N adet PDF dosyası barındıran (Örn: LGS Deneme 3 Cevap Anahtarı A Kitapçığı.pdf, B Kitapçığı.pdf) zengin bir yapı da olabilir. Kullanıcılar bunları giriş yapmadan önizleyip indirebilecektir.
 - **Yayın Süresi Mantığı:** Duyuru girilirken panelde "Bitiş Tarihi" veya "X Gün Yayında Kal" ayarlanır. Bu tarih geldiğinde UI'da (Frontend) gösterilmez. Ancak geçmiş veri kaybolmaması adına veritabanında "IsActive: false" (veya tarih filtresi) statüsü ile saklanır.
+Ayrıca duyurular için bir kategori sistemi de olacaktır. (Örn: Genel, deneme sınavı,  vb.)
 
 ### 2.6. "Deneme Sonuçlarım" Sistemi (Kişiselleştirilmiş PDF Vizörü)
 Sistemin en karmaşık ve kritik entegrasyon noktasıdır.
