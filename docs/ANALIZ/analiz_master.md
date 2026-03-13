@@ -51,7 +51,7 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
   → **YANIT:** oluşturulan programdaki bir apiye istek atılıp, öğrenci tc kimlik ve doğum tarihi ile sorgulama yapılacak ve istek atılacak.
 
 - [x] **Soru 12 (YKS & LGS Ayrımı):** Tek şube olmasına rağmen YKS ve LGS kursları için ana sayfada ayrı bölümler/butonlar istiyor musunuz? (Girişte "LGS için tıkla" / "YKS için tıkla" gibi bir karşılama mı istersiniz?)
-  → **YANIT:** Şüphesiz olmalı. YKS ve LGS için iki ayrı üst kısımda buton olmalı ve ayrı sayfalar açılıp detay verilmeli. Hakkımızda, Başarılarımız, Duyurular (içinde deneme sonuçları bulunmalı), YKS, LGS butonları/sayfaları olmalı ve de anasayfa olmalı.
+  → **YANIT:** Şüphesiz olmalı. YKS ve LGS için iki ayrı üst kısımda buton olmalı ve ayrı sayfalar açılıp detay verilmeli. Başarılarımız, Duyurular (içinde deneme sonuçları bulunmalı), YKS, LGS butonları/sayfaları olmalı ve de anasayfa olmalı. (Hakkımızda sayfası ve butonu iptal edildi).
 
 - [x] **Soru 13 (Başarılar Görselliği):** Başarılar kısmında öğrencilerin fotoğrafları olacak mı yoksa sadece isim ve yerleştikleri okul bilgisi mi yeterli?
   → **YANIT:** Fotoğraf olmayacak yalnızca öğrenci ismi ve başarısı yer alacak. Her sene kaç tıp kazanıldığı gibi detaylı bilgiler de mevcut. LGS ve YKS için ayrı ayrı başarılar listelenecek. LGS için her sene öğrencilerin girdiği yüzdelik dilimler de yer alacak. Kaç öğrenci fen kaç öğrenci anadolu lisesi kanazdı şeklinde yer alacak her sene için admin panelinden güncellenecek bu veriler.
@@ -123,7 +123,7 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
   - 📍 Adres: Ataşehir, Şelale Sk. No:29, 23040 Elazığ Merkez/Elazığ, Park 23 karşısı.
 
 - [x] **Soru 31 (Hakkımızda Metni):** "Hakkımızda" sayfası için hazır bir kurumsal metniniz var mı, yoksa anahtar kelimeleri verirseniz ben mi bir taslak oluşturayım?
-  → **YANIT:** Hazır metin yok, Database den bu veriler kullanılacak geliştirme sırasında dummy data kullanılacak.
+  → **YANIT:** Hakkımızda sayfası projeden tamamen kaldırılmıştır. Navbar'da menü linki veya ayrı bir CMS sayfası olmayacaktır.
 
 ---
 **İlerleme:** Round 7/10, Tamamlanma: 36/37 (%97)
@@ -131,7 +131,7 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
 ## 📝 Round 7 Soruları (Sayfa Yapısı ve UX Detayları)
 
 - [x] **Soru 32 (Deneme Sonuçları Akışı):** Öğrenci giriş yapıp deneme sonucunu gördükten sonra; sadece "PDF İndir" butonu mu olacak, yoksa ekranda bir önizleme/özet de gösterilecek mi?
-  → **YANIT:** Önizleme olacak ve PDF İndir butonu da olacak.
+  → **YANIT:** Ekranda herhangi bir önizleme gösterilmeyecek, kullanıcı doğrudan cihazına indirmesi için PDF İndir butonuna yönlendirilecek.
 
 - [x] **Soru 33 (YKS/LGS Sayfa İçerikleri):** YKS ve LGS sayfalarında; ders programı takvimi (haftalık/aylık tablo gibi) de yer alacak mı, yoksa sadece metin ve özellik listesi mi olacak?
   → **YANIT:** Herhangi bir takvim bulunmayacak. Sadece LGS ve YKS için hazırlıkların nasıl yapıldığı, öğrencilere bu süreçte ne gibi kazanımlar kazandırıldığı yazılacak.
@@ -153,14 +153,14 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
 
 ## 📝 Round 8 Soruları (Son Detaylar ve Entegrasyon)
 
-- [x] **Soru 38 (Navbar Yapısı):** Üst menüde şu butonlar olacak: Anasayfa, Hakkımızda, Başarılarımız, Duyurular, YKS, LGS. Bunlara ek olarak başka bir menü öğesi eklemek ister misiniz? (Örn: SSS, Blog, Galeri)
+- [x] **Soru 38 (Navbar Yapısı):** Üst menüde şu butonlar olacak: Anasayfa, Başarılarımız, Duyurular, YKS, LGS. Bunlara ek olarak başka bir menü öğesi eklemek ister misiniz? (Örn: SSS, Blog, Galeri)
   → **YANIT:** Hayır, gerekmiyor. Mevcut menü yeterli.
 
 - [x] **Soru 39 (Footer İçeriği):** Footer kısmında sosyal medya linkleri ve adres olacak. Bunun dışında footer'da ne olmalı? (Örn: Hızlı linkler, çalışma saatleri, harita embed'i, telif hakkı notu?)
   → **YANIT:** Embed harita olacak, telif hakkı notu olacak, çalışma saatleri olacak.
 
 - [x] **Soru 40 (Deneme Karnesi Önizleme):** Öğrenci deneme sonucunu önizlediğinde; sadece PDF'in görsel önizlemesi mi olacak, yoksa puanlar/net sayıları gibi veriler ayrı bir "kart" olarak mı gösterilecek?
-  → **YANIT:** Sadece PDF önizlemesi olacak.
+  → **YANIT:** Hiçbir görsel önizleme veya sonuç görmeyecek. Yalnızca PDF dosyasını indirecek.
 
 - [x] **Soru 41 (Duyuru Bildirimi):** Yeni bir duyuru yayınlandığında; siteye giren öğrenci/veli bunu nasıl fark edecek? (Örn: Pop-up bildirim, anasayfada "Yeni" rozeti, veya sadece duyurular sayfasında listeleme yeterli mi?)
   → **YANIT:** Sadece duyurular sayfasında listeleme yeterli. Gerekli bilgilendirme sosyal medya hesapları üzerinden yapılacak.
@@ -204,7 +204,7 @@ Bu belge, HAVSAN İteratif Analiz Sistemi (Rule 7) uyarınca oluşturulmuştur. 
   → **YANIT:** Hero'ya gerek yok. Daha önce netleştirilen yapı ile devam edilecek.
 
 - [x] **Soru 53 (Duyuru Kategorisi Filtresi):** Duyurular sayfasında kategorilere göre filtreleme (sekmeler veya dropdown) olsun mu? (Örn: Tümü | Genel Duyuru | Deneme Cevap Anahtarı | Deneme Sonuçları | Tatil Bilgisi)
-  → **YANIT:** Hayır, filtrelemeye gerek yok.
+  → **YANIT:** Evet olacak. "Genel Duyurular" ve "Deneme Sınavları" diye 2 ana kategori bulunacak. Tasarımdaki filtreleme UI'ı (Tümü / Genel Duyurular / Deneme Sınavları) kullanılacak.
 
 - [x] **Soru 54 (İletişim Sayfası Detayı):** İletişim sayfasında harita + adres + sosyal medya + WhatsApp butonu olacak. Bunlara ek olarak bir "Mesaj Formu" (Ad, Telefon, Mesaj) da koyalım mı? Yoksa sadece WhatsApp'a yönlendirme yeterli mi?
   → **YANIT:** Mesaj formuna gerek yok, WhatsApp'a yönlendirme yeterli.

@@ -33,14 +33,14 @@ Web sitesi, Ziyaretçi ile Kurum arasındaki ilk temas noktasıdır. %100 Duyarl
 ### 2.1. Global Navigasyon (Header & Footer)
 - **Header (Navbar):** 
   - Logo (Favicon ve sol üst köşe yerleşimi, SVG kalitesinde).
-  - Menü Linkleri: *Anasayfa, Hakkımızda, Başarılarımız, Duyurular, YKS, LGS.*
-  - CTA (Call to Action) Butonu: "Deneme Sonucumu Öğren" (Header'da göze çarpan bir buton olarak konumlandırılması UX açısından önerilir).
+  - Menü Linkleri: *Anasayfa, Başarılarımız, Duyurular, YKS, LGS.* (Hakkımızda iptal edildi).
+  - CTA (Call to Action) Butonu: "Deneme Sonucumu Öğren" (Header'da göze çarpan bir buton olarak konumlandırılması UX açısından önerilir). Herhangi bir "Hemen Başvur" tipi online kayıt butonu olmayacak, bunun yerine "İletişime Geçin" veya arama yönlendirmesi kullanılacak.
   - Davranış: Sayfa aşağı kaydırıldığında küçülerek ekrana yapışan (Sticky/Glassmorphism) navbar.
 - **Footer:** 
   - Dinamik İçerik: Panelden yönetilen adres, e-posta ve iletişim telefonları.
-  - Sosyal Medya İkonları: Instagram, Facebook, WhatsApp (Yeni sekmede açılacak şekilde yapılandırılmış).
-  - Harita: Google Maps IFrame embed kodu.
-  - Dinamik Mesai Saatleri Bilgisi: "Hafta İçi: 09:00 - 19:00" gibi veritabanından çekilen yapı.
+  - Sosyal Medya İkonları: Instagram, Facebook, WhatsApp (Jenerik olmayacak, analizde verilen gerçek linkler kullanılacak).
+  - Harita: Google Maps IFrame embed kodu (Mutlaka eklenecek, placeholder kalmayacak).
+  - Dinamik Mesai Saatleri Bilgisi: "Hafta İçi: 09:00 - 19:00" gibi veritabanından çekilen yapı. Adres ve telefon gibi bilgiler de veritabanından çekileceğinden tasarımdaki dummy datalara takılınmayacak. En alt kısımda yer alan footer, admin paneli HARİÇ tüm frontend sayfalarında yer alacak.
   - Legal: Copyright metni, KVKK - Gizlilik Politikası linkleri (Gelecekte ihtiyaç olunabileceğinden altyapısı hazır bırakılacak).
 
 ### 2.2. Anasayfa (Landing Page) Akışı
@@ -62,7 +62,7 @@ Verisinin tamamı Admin Panelinden girilen, sitenin en kritik satış noktaları
   - Bu liste, YKS için "Ahmet Y. - Hacettepe Tıp" gibiyken; LGS için "Ayşe K. - Ankara Fen Lisesi (%0.2 Dilim)" formatını destekleyecek dinamik sütun mimarisine sahip olmalıdır.
 
 ### 2.5. Duyurular ve Açık Kaynak Merkezi
-- **İşleyiş:** API'den liste olarak tüm duyurular (yayında olduğu belirtilenler) çekilecek. Kategorileme UI'da bulunmayacaktır.
+- **İşleyiş:** API'den liste olarak tüm duyurular (yayında olduğu belirtilenler) çekilecek. Duyurular "Genel Duyurular" ve "Deneme Sınavları" olmak üzere 2 ana kategoriye ayrılacak. UI üzerinde bu iki kategoriye göre filtreleme özelliği kesinlikle bulunacaktır.
 - **İçerik Tipleri:** Bir duyuru sadece bir metin olabileceği gibi, altında N adet PDF dosyası barındıran (Örn: LGS Deneme 3 Cevap Anahtarı A Kitapçığı.pdf, B Kitapçığı.pdf) zengin bir yapı da olabilir. Kullanıcılar bunları giriş yapmadan önizleyip indirebilecektir.
 - **Yayın Süresi Mantığı:** Duyuru girilirken panelde "Bitiş Tarihi" veya "X Gün Yayında Kal" ayarlanır. Bu tarih geldiğinde UI'da (Frontend) gösterilmez. Ancak geçmiş veri kaybolmaması adına veritabanında "IsActive: false" (veya tarih filtresi) statüsü ile saklanır.
 
@@ -74,7 +74,7 @@ Sistemin en karmaşık ve kritik entegrasyon noktasıdır.
   3. **.NET Backend** kendi üstüne gelen isteğin API sınırlarını / IP'sini onaylar, ardından (varsa external bir Authorization header ile) ERP/Dış Kurum Servisine backend-to-backend istekte bulunur.
   4. Dış servis eğer veriyi bulursa "PDF'i Base64 formatında" veya ilgili URL linki olarak .NET'e döner. Öğrenci bulunamazsa dış sistem `404 Not Found` döner.
   5. .NET sonucu bir Result objesi içinde Frontend'e sarıp gönderir.
-  6. Frontend Base64 verisini bir Client-Side PDF Görüntüleyici (PDFObject.js vb.) kullanarak Modal veya yeni sayfada render eder. Dosyayı cihazına "İndir" butonu aktive edilir.
+  6. Frontend, Base64 verisi için ekranda HERHANGİ BİR PDF ÖNİZLEMESİ GÖSTERMEYECEKTİR. Kullanıcıya doğrudan dosyayı cihazına indirebilmesi için yalnızca "PDF İndir" butonu sunulacaktır.
 - **Güvenlik Prensipleri:** Ziyaretçi doğrudan harici API'ye istek ATAMAZ. İstek kesinlikle Backend'in süzgecinden geçmelidir (CORS ve API Key koruması için). Rate-Limiting (Brute force TC denemelerini engellemek için aynı IP'den gelen isteklere sınır konulması) uygulanabilir.
 
 ---
@@ -92,7 +92,7 @@ Yönetim paneli kurum sahibinin ve vizyoner personelin siteyi yaşayan bir organ
 - **Site Ayarları Modülü:** 
   - İletişim, adres bilgileri, sosyal medya bağlantı linkleri güncellenebilir. Sistem `site_settings` tablosundaki konfigürasyondan beslenir.
 - **İçerik (CMS) Modülü:** 
-  - LGS metinleri, YKS metinleri, Hakkımızda sayfası metin blokları Rich Text Editor (Zengin Metin Editörü - CKEditor veya Quill benzeri) kullanılarak formatlı (kalın, italik, liste) girilebilmesi sağlanacaktır.
+  - LGS metinleri ve YKS metinleri blokları Rich Text Editor (Zengin Metin Editörü - CKEditor veya Quill benzeri) kullanılarak formatlı (kalın, italik, liste) girilebilmesi sağlanacaktır.
 - **Duyuru Yönetimi Modülü:**
   - **Başlık, Kategori, Metin** alanları yer alacaktır. Seçilen PDF dosyaları (çoklu seçim ile) Supabase Storage (S3 uyumlu Bucket) içine "yüklenir", dönen path/URL veritabanında ilişkisel `duyuru_dokumanlari` tablosuna yazılır.
   - Gösterimde kalıcı olma süresi gün/tarih olarak belirlenir.
@@ -129,7 +129,7 @@ Sistem kalitesi (Software Quality Attributes), sürdürülebilirlik, bakım yap�
 - **Supabase Storage (Bucket):** Resimler ve PDF'ler, genel ulaşıma açık `public` bucket'larda veya yetkiye bağlı `private` bucket'larda (özel imzalı URL'ler ile) sunulacak şekilde konfigüre edilecektir.
 
 ### 4.3. Frontend İstemcisi (Next.js & React)
-- SSR (Server Side Rendering) ve SSG (Static Site Generation) karışımı melez (Hybrid) model. SEO için "Hakkımızda", "Anasayfa" gibi sayfalar Server'da render edilecek, Dinamik Duyurular Client-Side'da Hydrate edilebilir olacaktır.
+- SSR (Server Side Rendering) ve SSG (Static Site Generation) karışımı melez (Hybrid) model. SEO için "Anasayfa", "YKS", "LGS" gibi sayfalar Server'da render edilecek, Dinamik Duyurular Client-Side'da Hydrate edilebilir olacaktır.
 - Zustand veya Context API yardımıyla panelin (Admin) App-wide stateleri ve bildirim/toast stateleri yürütülecektir.
 
 ### 4.4. Altyapı, Konteynerizasyon ve DevOps

@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1a237e;
+  --color-accent-red: #c62828;
+  --color-accent-gold: #f9a825;
+  --color-background-light: #f6f6f8;
+  --color-background-dark: #121220;
+
+  --font-display: 'Lexend', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@utility glass-nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body {
+  background-color: var(--color-background-light);
+  color: #0f172a; /* text-slate-900 */
+  font-family: var(--font-display);
+  overflow-x: hidden;
+}
