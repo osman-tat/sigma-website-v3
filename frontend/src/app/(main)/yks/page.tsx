@@ -86,7 +86,7 @@ export default function YKSPage() {
                         </p>
                         <ul className="space-y-2 text-xs font-semibold text-[#1a237e]/80">
                             <li className="flex items-center gap-2"><span className="material-symbols-outlined text-primary text-sm">check_circle</span> Temel Matematik Kampı</li>
-                            <li className="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Hızlı Okuma Teknikleri</li>
+                            <li className="flex items-center gap-2"><span className="material-symbols-outlined text-primary text-sm">check_circle</span> Hızlı Okuma Teknikleri</li>
                         </ul>
                     </div>
                     <div className="group bg-white p-8 rounded-2xl border border-[#1a237e]/5 hover:border-accent-red/50 transition-all hover:shadow-xl relative overflow-hidden">
@@ -139,14 +139,14 @@ export default function YKSPage() {
                 <h2 className="text-[#1a237e] text-4xl font-extrabold mb-4">Sizin İçin En Uygun Programı Belirleyelim</h2>
                 <p className="text-[#1a237e]/60 text-lg mb-12">Detaylı bilgi, fiyatlar ve kurum turu randevusu için eğitim danışmanlarımızla iletişime geçin.</p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <button className="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white px-10 py-5 rounded-2xl text-lg font-bold shadow-xl shadow-green-500/20 transition-all">
+                    <Link href="https://wa.me/905432674462" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white px-10 py-5 rounded-2xl text-lg font-bold shadow-xl shadow-green-500/20 transition-all">
                         <span className="material-symbols-outlined">chat</span>
                         WhatsApp ile İletişime Geç
-                    </button>
-                    <button className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-[#1a237e] border-2 border-[#1a237e]/10 px-10 py-5 rounded-2xl text-lg font-bold hover:bg-[#1a237e]/5 transition-all">
+                    </Link>
+                    <Link href="tel:+905432674462" className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-[#1a237e] border-2 border-[#1a237e]/10 px-10 py-5 rounded-2xl text-lg font-bold hover:bg-[#1a237e]/5 transition-all">
                         <span className="material-symbols-outlined">call</span>
-                        0212 555 66 77
-                    </button>
+                        +90 (543) 267 44 62
+                    </Link>
                 </div>
             </section>
         </>

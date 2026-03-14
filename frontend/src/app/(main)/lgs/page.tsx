@@ -122,13 +122,13 @@ export default function LGSPage() {
                         Çocuğunuzun akademik seviyesini belirleyelim ve ona özel çalışma planını birlikte oluşturalım.
                     </p>
                     <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-                        <Link href="#" className="w-full md:w-auto flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg">
+                        <Link href="https://wa.me/905432674462" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg">
                             <span className="material-symbols-outlined">chat</span>
                             WhatsApp'tan Yazın
                         </Link>
-                        <Link href="#" className="w-full md:w-auto flex items-center justify-center gap-3 bg-white text-[#1a237e] px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all shadow-lg border border-indigo-100">
+                        <Link href="tel:+905432674462" className="w-full md:w-auto flex items-center justify-center gap-3 bg-white text-[#1a237e] px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all shadow-lg border border-indigo-100">
                             <span className="material-symbols-outlined">call</span>
-                            0212 555 66 77
+                            +90 (543) 267 44 62
                         </Link>
                     </div>
                 </div>

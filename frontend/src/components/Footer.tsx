@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -7,8 +8,8 @@ export default function Footer() {
                 <div className="grid lg:grid-cols-4 gap-12 mb-16">
                     <div className="flex flex-col gap-6">
                         <div className="flex items-center gap-3">
-                            <div className="bg-white text-primary p-2 rounded-lg flex items-center justify-center">
-                                <span className="material-symbols-outlined text-2xl">functions</span>
+                            <div className="bg-white p-1 rounded-lg flex items-center justify-center w-12 h-12">
+                                <Image src="/images/sigma_logo.png" alt="6 Sigma Logo" width={40} height={40} className="object-contain" />
                             </div>
                             <h2 className="text-white text-2xl font-black tracking-tight">6 SIGMA</h2>
                         </div>
