@@ -46,36 +46,21 @@ export default function DuyuruEklePage() {
                                 className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-slate-900 focus:ring-2 focus:ring-[#0d1b4a] focus:border-[#0d1b4a] outline-none transition-colors cursor-pointer"
                             >
                                 <option value="" disabled>Seçiniz</option>
-                                <option value="Sinav">Sınav</option>
-                                <option value="Etkinlik">Etkinlik</option>
-                                <option value="Program">Program</option>
-                                <option value="Duyuru">Genel Duyuru</option>
+                                <option value="Genel Duyuru">Genel Duyuru</option>
+                                <option value="Deneme Sınavı">Deneme Sınavı</option>
                             </select>
                         </div>
                     </div>
 
                     <div className="space-y-1.5">
                         <label className="block text-sm font-medium text-slate-700">Duyuru İçeriği</label>
-                        <div className="border border-slate-300 rounded-lg overflow-hidden bg-white focus-within:ring-2 focus-within:ring-[#0d1b4a] focus-within:border-[#0d1b4a] transition-colors">
-                            <div className="flex flex-wrap items-center gap-1 border-b border-slate-200 p-2 bg-slate-50">
-                                <button type="button" className="p-1.5 rounded text-slate-600 hover:bg-slate-200 transition-colors"><span className="material-symbols-outlined text-[18px]">format_bold</span></button>
-                                <button type="button" className="p-1.5 rounded text-slate-600 hover:bg-slate-200 transition-colors"><span className="material-symbols-outlined text-[18px]">format_italic</span></button>
-                                <button type="button" className="p-1.5 rounded text-slate-600 hover:bg-slate-200 transition-colors"><span className="material-symbols-outlined text-[18px]">format_underlined</span></button>
-                                <div className="w-px h-4 bg-slate-300 mx-1"></div>
-                                <button type="button" className="p-1.5 rounded text-slate-600 hover:bg-slate-200 transition-colors"><span className="material-symbols-outlined text-[18px]">format_list_bulleted</span></button>
-                                <button type="button" className="p-1.5 rounded text-slate-600 hover:bg-slate-200 transition-colors"><span className="material-symbols-outlined text-[18px]">format_list_numbered</span></button>
-                                <div className="w-px h-4 bg-slate-300 mx-1"></div>
-                                <button type="button" className="p-1.5 rounded text-slate-600 hover:bg-slate-200 transition-colors"><span className="material-symbols-outlined text-[18px]">link</span></button>
-                                <button type="button" className="p-1.5 rounded text-slate-600 hover:bg-slate-200 transition-colors"><span className="material-symbols-outlined text-[18px]">image</span></button>
-                            </div>
-                            <textarea
-                                required
-                                value={content}
-                                onChange={(e) => setContent(e.target.value)}
-                                className="w-full min-h-[200px] p-4 border-none resize-y text-sm text-slate-900 bg-transparent outline-none focus:ring-0 placeholder-slate-400"
-                                placeholder="Duyuru içeriğini buraya formata uygun şekilde yazınız..."
-                            ></textarea>
-                        </div>
+                        <textarea
+                            required
+                            value={content}
+                            onChange={(e) => setContent(e.target.value)}
+                            className="w-full min-h-[200px] p-4 border border-slate-300 rounded-lg resize-y text-sm text-slate-900 outline-none focus:ring-2 focus:ring-[#0d1b4a] focus:border-[#0d1b4a] placeholder-slate-400 transition-colors"
+                            placeholder="Duyuru içeriğini buraya yazınız..."
+                        ></textarea>
                     </div>
 
                     <div className="space-y-1.5">

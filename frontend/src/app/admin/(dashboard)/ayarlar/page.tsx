@@ -86,7 +86,7 @@ export default function AyarlarPage() {
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 mb-1.5">Google Harita Iframe Kodu</label>
                                 <textarea value={mapIframe} onChange={(e) => setMapIframe(e.target.value)} className="w-full px-3 py-2.5 rounded-lg border border-slate-200 bg-white text-slate-900 focus:ring-2 focus:ring-[#0d1b4a]/20 focus:border-[#0d1b4a] outline-none transition-all font-mono text-xs text-slate-500" rows={4}></textarea>
-                                <p className="text-xs text-slate-400 mt-1.5">Google Maps'ten aldığınız "Harita Yerleştir" iframe kodunu buraya yapıştırın.</p>
+                                <p className="text-xs text-slate-400 mt-1.5">Google Maps&apos;ten aldığınız &quot;Harita Yerleştir&quot; iframe kodunu buraya yapıştırın.</p>
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 mb-2">Harita Önizleme</label>

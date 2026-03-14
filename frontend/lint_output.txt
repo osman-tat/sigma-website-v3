@@ -1,0 +1,44 @@
+
+> frontend@0.1.0 lint
+> eslint
+
+
+/app/src/app/(main)/basarilarimiz/page.tsx
+  4:8  warning  'Image' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/src/app/(main)/deneme-sonuclari/page.tsx
+  4:8  warning  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/src/app/(main)/lgs/page.tsx
+   33:96  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  127:37  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/app/src/app/(main)/page.tsx
+   99:67  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  100:59  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/app/src/app/(main)/yks/page.tsx
+  74:100  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/app/src/app/admin/(dashboard)/ayarlar/page.tsx
+  89:89   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  89:104  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  89:121  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+/app/src/app/admin/(dashboard)/basarilar/page.tsx
+  4:10  warning  'useState' is defined but never used  @typescript-eslint/no-unused-vars
+
+/app/src/app/admin/login/page.tsx
+   3:8   warning  'Link' is defined but never used                                 @typescript-eslint/no-unused-vars
+   4:10  warning  'useState' is defined but never used                             @typescript-eslint/no-unused-vars
+  21:74  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/app/src/app/layout.tsx
+  23:9  warning  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+  24:9  warning  Custom fonts not added in `pages/_document.js` will only load for a single page. This is discouraged. See: https://nextjs.org/docs/messages/no-page-custom-font  @next/next/no-page-custom-font
+
+/app/src/components/Footer.tsx
+  17:110  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+✖ 17 problems (10 errors, 7 warnings)
+

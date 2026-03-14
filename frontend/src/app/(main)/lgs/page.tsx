@@ -30,7 +30,7 @@ export default function LGSPage() {
 
             <section className="py-24 max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-[#1a237e] text-3xl md:text-4xl font-black mb-4">6 Sigma'da LGS Süreci Nasıl İşler?</h2>
+                    <h2 className="text-[#1a237e] text-3xl md:text-4xl font-black mb-4">6 Sigma&apos;da LGS Süreci Nasıl İşler?</h2>
                     <div className="h-1.5 w-24 bg-primary mx-auto rounded-full"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -124,7 +124,7 @@ export default function LGSPage() {
                     <div className="flex flex-col md:flex-row items-center justify-center gap-6">
                         <Link href="https://wa.me/905432674462" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg">
                             <span className="material-symbols-outlined">chat</span>
-                            WhatsApp'tan Yazın
+                            WhatsApp&apos;tan Yazın
                         </Link>
                         <Link href="tel:+905432674462" className="w-full md:w-auto flex items-center justify-center gap-3 bg-white text-[#1a237e] px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all shadow-lg border border-indigo-100">
                             <span className="material-symbols-outlined">call</span>

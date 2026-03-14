@@ -4,47 +4,51 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 px-6 overflow-hidden">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col gap-8">
-            <h1 className="text-primary text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight">
-              Geleceğinizi <br /> <span className="text-accent-red">Şekillendiriyoruz</span>
+      {/* Hero Section - navbar arkasına uzanmak için -mt-20 */}
+      <section className="relative w-full h-screen overflow-hidden -mt-20">
+        <style>{`
+          @keyframes heroZoomOut {
+            from { transform: scale(1.10); }
+            to   { transform: scale(1.00); }
+          }
+          .hero-bg {
+            animation: heroZoomOut 6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          }
+        `}</style>
+
+        {/* Arka Plan Görseli */}
+        <div className="hero-bg absolute inset-0 w-full h-full">
+          <Image
+            src="/images/sigma_gorsel.jpeg"
+            alt="6 Sigma Eğitim Kurumu"
+            fill
+            priority
+            className="object-cover"
+          />
+        </div>
+
+        {/* Karartma Katmanı */}
+        <div className="absolute inset-0 bg-[#0d1b4a]/65" />
+
+        {/* İçerik */}
+        <div className="relative z-10 h-full flex items-center justify-center px-6">
+          <div className="max-w-4xl w-full text-center">
+            <h1 className="text-white text-5xl md:text-7xl font-extrabold leading-tight drop-shadow-lg">
+              Zirveye Ulaşanların
+              <br />
+              <span className="text-[#e53935]">Buluşma Noktası</span>
             </h1>
-            <p className="text-slate-600 text-lg lg:text-xl max-w-lg leading-relaxed">
-              Modern eğitim anlayışı, yapay zeka destekli analizler ve uzman kadromuz ile YKS ve LGS sınavlarında fark yaratın.
+            <p className="text-white/85 text-lg md:text-xl mt-6 max-w-2xl mx-auto leading-relaxed">
+              Elazığ&apos;ın en köklü eğitim kurumunda, uzman kadromuz ve birebir koçluk sistemiyle YKS ve LGS&apos;de hedeflerinize birlikte ulaşalım.
             </p>
-            <div className="grid sm:grid-cols-2 gap-4 mt-4">
-              <Link href="/yks" className="group cursor-pointer bg-primary p-6 rounded-xl text-white shadow-xl shadow-primary/20 hover:-translate-y-1 transition-transform block">
-                <div className="flex justify-between items-start mb-4">
-                  <span className="material-symbols-outlined text-3xl">terminal</span>
-                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </div>
-                <h3 className="text-xl font-bold mb-1">YKS Programları</h3>
-                <p className="text-white/70 text-sm">Üniversite hedeflerine giden yolda profesyonel destek.</p>
+            <div className="mt-10 flex flex-wrap gap-4 justify-center">
+              <Link href="/yks" className="bg-[#e53935] text-white font-bold px-8 py-4 rounded-xl hover:scale-105 transition-transform flex items-center gap-2 shadow-xl shadow-red-900/30">
+                YKS Programları <span className="material-symbols-outlined">arrow_forward</span>
               </Link>
-              <Link href="/lgs" className="group cursor-pointer bg-accent-red p-6 rounded-xl text-white shadow-xl shadow-accent-red/20 hover:-translate-y-1 transition-transform block">
-                <div className="flex justify-between items-start mb-4">
-                  <span className="material-symbols-outlined text-3xl">child_care</span>
-                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </div>
-                <h3 className="text-xl font-bold mb-1">LGS Programları</h3>
-                <p className="text-white/70 text-sm">En iyi liseler için sağlam bir temel ve strateji.</p>
+              <Link href="/lgs" className="bg-white/10 backdrop-blur-sm border border-white/30 text-white font-bold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors flex items-center gap-2">
+                LGS Programları <span className="material-symbols-outlined">arrow_forward</span>
               </Link>
             </div>
-          </div>
-          <div className="relative">
-            <div className="aspect-square bg-slate-200 rounded-3xl overflow-hidden shadow-2xl relative z-10 block">
-              <Image
-                src="/images/homepage_hero_student.png"
-                alt="Modern classroom with students and teacher"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-accent-gold rounded-full -z-10 blur-2xl opacity-30"></div>
-            <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-primary rounded-full -z-10 blur-3xl opacity-20"></div>
           </div>
         </div>
       </section>
@@ -96,8 +100,8 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary to-blue-900 p-10 lg:p-16 text-white flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
             <div className="flex flex-col gap-4 text-center lg:text-left z-10">
               <span className="bg-accent-gold/20 text-accent-gold px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest border border-accent-gold/30 w-fit mx-auto lg:mx-0">Başarı Özeti</span>
-              <h2 className="text-4xl lg:text-5xl font-black">2023'te 45 Tıp Fakültesi Kazanımı!</h2>
-              <p className="text-white/80 text-lg">Türkiye'nin en seçkin üniversitelerine binlerce öğrenci yerleştirdik.</p>
+              <h2 className="text-4xl lg:text-5xl font-black">2023&apos;te 45 Tıp Fakültesi Kazanımı!</h2>
+              <p className="text-white/80 text-lg">Türkiye&apos;nin en seçkin üniversitelerine binlerce öğrenci yerleştirdik.</p>
             </div>
             <Link href="/basarilarimiz" className="group z-10 flex items-center gap-4 bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-accent-gold hover:text-white transition-all">
               Tüm Başarılarımızı Gör

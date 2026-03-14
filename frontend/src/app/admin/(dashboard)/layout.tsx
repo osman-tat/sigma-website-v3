@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function AdminDashboardLayout({
     children,
@@ -18,8 +19,8 @@ export default function AdminDashboardLayout({
             <div className="flex h-full w-[280px] flex-col justify-between bg-white border-r border-slate-200 shrink-0 p-4">
                 <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-3 px-3 py-4 border-b border-slate-200">
-                        <div className="bg-[#0d1b4a] rounded-lg size-10 flex items-center justify-center text-white font-bold text-xl">
-                            6S
+                        <div className="bg-white rounded-lg size-10 flex items-center justify-center border border-slate-100 overflow-hidden">
+                            <Image src="/images/sigma_logo.png" alt="6 Sigma Logo" width={40} height={40} className="object-contain" />
                         </div>
                         <h1 className="text-[#0d1b4a] text-lg font-bold leading-normal">6 Sigma Admin</h1>
                     </div>
@@ -33,13 +34,6 @@ export default function AdminDashboardLayout({
                         >
                             <span className="material-symbols-outlined text-[24px]">dashboard</span>
                             <p className="text-sm leading-normal">Dashboard</p>
-                        </Link>
-                        <Link
-                            href="#"
-                            className="flex items-center gap-3 px-3 py-3 text-[#0d1b4a]/80 hover:text-[#0d1b4a] hover:bg-slate-50 rounded-lg transition-colors font-medium"
-                        >
-                            <span className="material-symbols-outlined text-[24px]">language</span>
-                            <p className="text-sm leading-normal">Site Yönetimi</p>
                         </Link>
                         <Link
                             href="/admin/ayarlar"
@@ -98,10 +92,7 @@ export default function AdminDashboardLayout({
                         <span className="text-slate-900 text-sm font-medium">Dashboard</span>
                     </div>
                     <div className="flex items-center gap-4">
-                        <button className="relative p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors">
-                            <span className="material-symbols-outlined text-[24px]">notifications</span>
-                            <span className="absolute top-1 right-1 size-2.5 bg-red-600 rounded-full border-2 border-white"></span>
-                        </button>
+
                         <div className="flex items-center gap-3 bg-slate-50 py-1.5 px-3 rounded-full border border-slate-200">
                             <div className="size-8 rounded-full bg-[#0d1b4a] text-white flex items-center justify-center text-sm font-bold">
                                 RS

@@ -18,9 +18,6 @@ export default function YKSPage() {
                     <div className="absolute inset-0 bg-gradient-to-b from-[#0d1b4a]/40 via-transparent to-background-light/10"></div>
                 </div>
                 <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-                    <span className="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary text-xs font-bold uppercase tracking-widest shadow-xl">
-                        Akademik Başarı Yolculuğu
-                    </span>
                     <h1 className="text-white text-5xl md:text-7xl font-extrabold mb-6 tracking-tight drop-shadow-md">
                         YKS Programları
                     </h1>
@@ -28,7 +25,7 @@ export default function YKSPage() {
                         Üniversite hayallerinize giden yolda, 6 Sigma disiplini ile güçlü bir başlangıç yapın. Kişiselleştirilmiş eğitim modelleriyle zirveyi hedefliyoruz.
                     </p>
                     <div className="mt-10 flex flex-wrap justify-center gap-4">
-                        <Link href="#iletisim" className="bg-primary text-[#1a237e] font-bold px-8 py-4 rounded-xl hover:scale-105 transition-transform flex items-center gap-2 shadow-xl shadow-primary/30">
+                        <Link href="#iletisim" className="bg-primary text-white font-bold px-8 py-4 rounded-xl hover:scale-105 transition-transform flex items-center gap-2 shadow-xl shadow-primary/30">
                             Bize Ulaşın <span className="material-symbols-outlined">arrow_forward</span>
                         </Link>
                     </div>
@@ -71,7 +68,7 @@ export default function YKSPage() {
             {/* Süreç */}
             <section className="py-24 max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-[#1a237e] text-3xl md:text-4xl font-extrabold mb-4">6 Sigma'da YKS Süreci Nasıl İşler?</h2>
+                    <h2 className="text-[#1a237e] text-3xl md:text-4xl font-extrabold mb-4">6 Sigma&apos;da YKS Süreci Nasıl İşler?</h2>
                     <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

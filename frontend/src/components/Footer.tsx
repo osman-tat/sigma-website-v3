@@ -14,7 +14,7 @@ export default function Footer() {
                             <h2 className="text-white text-2xl font-black tracking-tight">6 SIGMA</h2>
                         </div>
                         <p className="text-white/60 leading-relaxed text-sm">
-                            Eğitimde mükemmelliği hedefleyen, başarı odaklı ve modern yaklaşımlarıyla Türkiye'nin öncü eğitim kurumlarından biridir.
+                            Eğitimde mükemmelliği hedefleyen, başarı odaklı ve modern yaklaşımlarıyla Türkiye&apos;nin öncü eğitim kurumlarından biridir.
                         </p>
                         <div className="flex gap-4">
                             <Link href="https://www.instagram.com/6sigmaegitim" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#E1306C] transition-all group">

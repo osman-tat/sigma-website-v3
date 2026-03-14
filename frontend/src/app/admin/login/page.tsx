@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { useState } from "react";
+
 
 export default function AdminLoginPage() {
     return (
@@ -18,7 +17,7 @@ export default function AdminLoginPage() {
                         </div>
                     </div>
                     <h1 className="text-white text-4xl font-light mb-4">Yönetim Paneli</h1>
-                    <p className="text-white/70 text-lg max-w-md">Türkiye'nin öncü eğitim kurumunun ayrıcalıklı yönetim platformuna hoş geldiniz.</p>
+                    <p className="text-white/70 text-lg max-w-md">Türkiye&apos;nin öncü eğitim kurumunun ayrıcalıklı yönetim platformuna hoş geldiniz.</p>
                 </div>
                 <div className="absolute bottom-8 left-8 text-white/50 text-sm">
                     © 2024 6 Sigma Eğitim Kurumları. Tüm hakları saklıdır.
