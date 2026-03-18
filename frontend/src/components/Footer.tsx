@@ -31,6 +31,8 @@ export default function Footer() {
                     <div className="flex flex-col gap-6">
                         <h4 className="text-lg font-bold">Hızlı Menü</h4>
                         <ul className="flex flex-col gap-4 text-white/60 text-sm">
+                            <li><Link href="/" className="hover:text-white transition-colors">Anasayfa</Link></li>
+                            <li><Link href="/hakkimizda" className="hover:text-white transition-colors">Hakkımızda</Link></li>
                             <li><Link href="/yks" className="hover:text-white transition-colors">Eğitim Programları</Link></li>
                             <li><Link href="/basarilarimiz" className="hover:text-white transition-colors">Başarı Tablomuz</Link></li>
                             <li><Link href="#" className="hover:text-white transition-colors">İletişim</Link></li>

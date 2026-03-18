@@ -21,11 +21,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        transparent
-          ? "bg-transparent"
-          : "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${transparent
+        ? "bg-transparent"
+        : "bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div className="flex items-center gap-3">
@@ -45,6 +44,7 @@ export default function Navbar() {
         <nav className="hidden lg:flex items-center gap-8">
           {[
             { href: "/", label: "Anasayfa" },
+            { href: "/hakkimizda", label: "Hakkımızda" },
             { href: "/basarilarimiz", label: "Başarılarımız" },
             { href: "/duyurular", label: "Duyurular" },
             { href: "/yks", label: "YKS" },
@@ -53,11 +53,10 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
-              className={`font-medium transition-colors ${
-                transparent
-                  ? "text-white/90 hover:text-white drop-shadow"
-                  : "text-slate-700 hover:text-[#0d1b4a]"
-              }`}
+              className={`font-medium transition-colors ${transparent
+                ? "text-white/90 hover:text-white drop-shadow"
+                : "text-slate-700 hover:text-[#0d1b4a]"
+                }`}
             >
               {label}
             </Link>

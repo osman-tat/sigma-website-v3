@@ -19,7 +19,7 @@ export default function Home() {
         {/* Arka Plan Görseli */}
         <div className="hero-bg absolute inset-0 w-full h-full">
           <Image
-            src="/images/sigma_gorsel.jpeg"
+            src="/images/image.png"
             alt="6 Sigma Eğitim Kurumu"
             fill
             priority
